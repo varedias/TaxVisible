@@ -51,7 +51,7 @@ npx http-server -p 8000
 
 # 然后访问 http://localhost:8000
 ```
-
+访问: http://localhost:8000/index.html
 #### OCR识别集成
 项目支持多种OCR识别方案:
 

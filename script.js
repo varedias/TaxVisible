@@ -4,31 +4,22 @@ let canvas = null;
 let ctx = null;
 let stream = null;
 let unityInstance = null;
-let historyData = [];
+let qrScanningActive = false;
+let scanAnimationId = null;
 
 // DOM元素
-const startCameraBtn = document.getElementById('startCamera');
-const captureImageBtn = document.getElementById('captureImage');
-const stopCameraBtn = document.getElementById('stopCamera');
-const calculateBtn = document.getElementById('calculate');
+const qrStatusElement = document.getElementById('qrStatus');
 const nextStepBtn = document.getElementById('nextStep');
 const backToInputBtn = document.getElementById('backToInput');
-const playAnimationBtn = document.getElementById('playAnimation');
 const priceInput = document.getElementById('price');
 const taxRateInput = document.getElementById('taxRate');
 const taxPriceDisplay = document.getElementById('taxPrice');
-const historyBody = document.getElementById('historyBody');
 
 // 步骤控制元素
 const step1Content = document.getElementById('step1-content');
 const step2Content = document.getElementById('step2-content');
 const step1Indicator = document.getElementById('step1-indicator');
 const step2Indicator = document.getElementById('step2-indicator');
-
-// 显示信息元素
-const displayPrice = document.getElementById('displayPrice');
-const displayTaxRate = document.getElementById('displayTaxRate');
-const displayTaxPrice = document.getElementById('displayTaxPrice');
 
 // 当前计算的数据
 let currentCalculation = {
@@ -44,13 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
     ctx = canvas.getContext('2d');
     
     // 绑定事件
-    startCameraBtn.addEventListener('click', startCamera);
-    captureImageBtn.addEventListener('click', captureImage);
-    stopCameraBtn.addEventListener('click', stopCamera);
-    calculateBtn.addEventListener('click', calculateTaxPrice);
     nextStepBtn.addEventListener('click', goToStep2);
     backToInputBtn.addEventListener('click', goToStep1);
-    playAnimationBtn.addEventListener('click', playUnityAnimation);
     
     // 监听输入变化自动计算
     priceInput.addEventListener('input', autoCalculate);
@@ -64,126 +50,163 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // 加载历史记录
-    loadHistory();
+    // 自动启动二维码扫描
+    startQRScanner();
 });
 
-// ==================== 摄像头功能 ====================
+// ==================== 二维码扫描功能 ====================
 
 /**
- * 启动摄像头
+ * 启动二维码扫描器
  */
-async function startCamera() {
+async function startQRScanner() {
     try {
+        // 请求摄像头权限（后置摄像头优先）
         stream = await navigator.mediaDevices.getUserMedia({ 
             video: { 
-                facingMode: 'environment',
+                facingMode: { ideal: 'environment' },
                 width: { ideal: 1280 },
                 height: { ideal: 720 }
             } 
         });
+        
         video.srcObject = stream;
+        qrScanningActive = true;
         
-        // 更新按钮状态
-        startCameraBtn.disabled = true;
-        captureImageBtn.disabled = false;
-        stopCameraBtn.disabled = false;
+        // 等待视频加载
+        video.onloadedmetadata = () => {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            updateQRStatus('📷 扫描中...', 'scanning');
+            requestAnimationFrame(scanQRCode);
+        };
         
-        showMessage('摄像头已启动', 'success');
     } catch (error) {
         console.error('启动摄像头失败:', error);
-        showMessage('启动摄像头失败: ' + error.message, 'error');
+        updateQRStatus('❌ 摄像头启动失败', 'error');
+        showMessage('无法访问摄像头，请检查浏览器权限设置或使用HTTPS', 'error');
     }
 }
 
 /**
- * 停止摄像头
+ * 停止二维码扫描
  */
-function stopCamera() {
+function stopQRScanner() {
+    qrScanningActive = false;
+    if (scanAnimationId) {
+        cancelAnimationFrame(scanAnimationId);
+        scanAnimationId = null;
+    }
     if (stream) {
         stream.getTracks().forEach(track => track.stop());
         video.srcObject = null;
         stream = null;
-        
-        // 更新按钮状态
-        startCameraBtn.disabled = false;
-        captureImageBtn.disabled = true;
-        stopCameraBtn.disabled = true;
-        
-        showMessage('摄像头已停止', 'info');
     }
 }
 
 /**
- * 拍照并识别
+ * 扫描二维码
  */
-function captureImage() {
-    // 设置canvas尺寸
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
+function scanQRCode() {
+    if (!qrScanningActive) {
+        return;
+    }
     
-    // 绘制当前帧
-    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-    
-    // 获取图像数据
-    canvas.toBlob(async (blob) => {
-        showMessage('正在识别图像...', 'info');
-        
-        // 调用OCR识别API
-        const result = await recognizeImage(blob);
-        
-        if (result.success) {
-            priceInput.value = result.price || '';
-            taxRateInput.value = result.taxRate || '';
-            calculateTaxPrice();
-            showMessage('识别成功!', 'success');
-        } else {
-            showMessage('识别失败,请手动输入或重试', 'warning');
+    if (video.readyState === video.HAVE_ENOUGH_DATA) {
+        try {
+            // 绘制当前视频帧到canvas
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+            
+            // 获取图像数据
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            
+            // 使用jsQR库解析二维码
+            const code = jsQR(imageData.data, imageData.width, imageData.height, {
+                inversionAttempts: "dontInvert",
+            });
+            
+            if (code) {
+                // 成功扫描到二维码
+                handleQRCodeData(code.data);
+                return; // 停止扫描
+            }
+        } catch (error) {
+            console.error('二维码扫描错误:', error);
         }
-    }, 'image/jpeg', 0.95);
+    }
+    
+    // 继续扫描
+    scanAnimationId = requestAnimationFrame(scanQRCode);
 }
 
 /**
- * 图像识别函数 (调用OCR API)
- * 这里需要集成实际的OCR服务,如Tesseract.js、百度OCR、阿里云OCR等
+ * 处理扫描到的二维码数据
+ * 二维码格式示例：
+ * JSON: {"price": 100, "taxRate": 13}
+ * 或 URL参数: price=100&taxRate=13
  */
-async function recognizeImage(imageBlob) {
+function handleQRCodeData(qrData) {
+    console.log('扫描到二维码:', qrData);
+    updateQRStatus('✅ 扫描成功！', 'success');
+    
     try {
-        // 示例: 使用Tesseract.js进行本地OCR识别
-        // 实际项目中可能需要调用云端API获得更好的识别率
+        let price = null;
+        let taxRate = null;
         
-        // 方案1: 使用Tesseract.js (需要引入库)
-        // const { createWorker } = Tesseract;
-        // const worker = await createWorker();
-        // await worker.loadLanguage('eng');
-        // await worker.initialize('eng');
-        // const { data: { text } } = await worker.recognize(imageBlob);
-        // await worker.terminate();
+        // 尝试解析JSON格式
+        try {
+            const data = JSON.parse(qrData);
+            price = data.price;
+            taxRate = data.taxRate || data.tax_rate || data.rate;
+        } catch (e) {
+            // 尝试解析URL参数格式
+            const params = new URLSearchParams(qrData);
+            price = params.get('price');
+            taxRate = params.get('taxRate') || params.get('tax_rate') || params.get('rate');
+        }
         
-        // 方案2: 调用云端API
-        const formData = new FormData();
-        formData.append('image', imageBlob);
-        
-        // 这里需要替换为你的实际API端点
-        // const response = await fetch('/api/ocr', {
-        //     method: 'POST',
-        //     body: formData
-        // });
-        // const data = await response.json();
-        
-        // 模拟识别结果 (实际使用时删除此部分)
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        const mockResult = {
-            success: true,
-            price: (Math.random() * 100 + 10).toFixed(2),
-            taxRate: (Math.random() * 20 + 5).toFixed(2)
-        };
-        
-        return mockResult;
+        if (price !== null && taxRate !== null) {
+            // 填充表单
+            priceInput.value = price;
+            taxRateInput.value = taxRate;
+            
+            // 自动计算税额
+            autoCalculate();
+            
+            showMessage(`✅ 识别成功！价格: ¥${price}, 税率: ${taxRate}%`, 'success');
+            
+            // 停止扫描
+            stopQRScanner();
+            updateQRStatus('✅ 识别完成', 'success');
+            
+            // 1.5秒后自动进入动画展示
+            setTimeout(() => {
+                goToStep2();
+            }, 1500);
+        } else {
+            throw new Error('二维码格式错误，缺少price或taxRate字段');
+        }
         
     } catch (error) {
-        console.error('图像识别失败:', error);
-        return { success: false };
+        console.error('解析二维码数据失败:', error);
+        updateQRStatus('❌ 格式错误，继续扫描...', 'error');
+        showMessage('二维码格式错误，请使用正确格式', 'error');
+        
+        // 继续扫描
+        setTimeout(() => {
+            updateQRStatus('📷 扫描中...', 'scanning');
+            scanAnimationId = requestAnimationFrame(scanQRCode);
+        }, 2000);
+    }
+}
+
+/**
+ * 更新二维码扫描状态显示
+ */
+function updateQRStatus(message, status) {
+    if (qrStatusElement) {
+        qrStatusElement.textContent = message;
+        qrStatusElement.className = 'qr-status-' + status;
     }
 }
 
@@ -193,16 +216,14 @@ async function recognizeImage(imageBlob) {
  * 进入第二步
  */
 function goToStep2() {
-    // 验证数据
+    // 验证输入
     if (!currentCalculation.price || !currentCalculation.taxRate) {
-        showMessage('请先计算税价', 'warning');
+        showMessage('请先输入价格和税率或扫描二维码！', 'warning');
         return;
     }
     
-    // 停止摄像头
-    if (stream) {
-        stopCamera();
-    }
+    // 停止二维码扫描
+    stopQRScanner();
     
     // 切换界面
     step1Content.classList.remove('active');
@@ -210,22 +231,15 @@ function goToStep2() {
     step1Indicator.classList.remove('active');
     step2Indicator.classList.add('active');
     
-    // 更新显示信息
-    displayPrice.textContent = `¥${currentCalculation.price.toFixed(2)}`;
-    displayTaxRate.textContent = `${currentCalculation.taxRate.toFixed(2)}%`;
-    displayTaxPrice.textContent = `¥${currentCalculation.taxPrice.toFixed(2)}`;
-    
-    // 初始化Unity
+    // 初始化Unity并自动播放动画
     if (!unityInstance) {
         initUnity();
     } else {
-        // Unity已加载,直接发送数据 - 传入整数
-        sendPriceData(Math.round(currentCalculation.taxPrice));
+        // Unity已加载，直接播放动画
+        playAnimation();
     }
     
-    showMessage('已进入动画展示界面', 'success');
-    
-    // 滚动到顶部
+    showMessage('正在加载动画...', 'info');
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -239,79 +253,56 @@ function goToStep1() {
     step2Indicator.classList.remove('active');
     step1Indicator.classList.add('active');
     
-    showMessage('已返回输入界面', 'info');
+    // 重新启动二维码扫描
+    startQRScanner();
     
-    // 滚动到顶部
+    showMessage('已返回输入界面', 'info');
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ==================== 税价计算功能 ====================
+// ==================== 税款计算功能 ====================
 
 /**
  * 自动计算税款
  * 税款 = 商品价格 × 税率
- * 例如: 1000元 × 13% = 130元
  */
 function autoCalculate() {
-    const price = parseFloat(priceInput.value);
-    const taxRate = parseFloat(taxRateInput.value);
+    const price = parseFloat(priceInput.value) || 0;
+    const taxRate = parseFloat(taxRateInput.value) || 0;
     
-    if (!isNaN(price) && price > 0 && !isNaN(taxRate) && taxRate >= 0) {
+    if (price > 0 && taxRate > 0) {
         // 计算税款 = 商品价格 × 税率
         const taxAmount = price * (taxRate / 100);
         taxPriceDisplay.textContent = `¥${taxAmount.toFixed(2)}`;
         
         // 保存当前计算结果（taxPrice 存储的是税款金额）
         currentCalculation = {
-            price: price,           // 商品价格
-            taxRate: taxRate,       // 税率百分比
+            price: price,
+            taxRate: taxRate,
             taxPrice: taxAmount     // 税款金额
         };
-        
-        // 启用下一步按钮
-        nextStepBtn.disabled = false;
         
         console.log(`💰 税款计算: ${price}元 × ${taxRate}% = ${taxAmount.toFixed(2)}元`);
     } else {
         taxPriceDisplay.textContent = '¥0.00';
-        nextStepBtn.disabled = true;
-    }
-}
-
-/**
- * 计算税价(按钮点击)
- */
-function calculateTaxPrice() {
-    autoCalculate();
-    
-    if (currentCalculation.taxPrice > 0) {
-        const price = currentCalculation.price;
-        const taxRate = currentCalculation.taxRate;
-        const taxAmount = currentCalculation.taxPrice;
-        
-        showMessage(`税额计算完成! ${price}元 × ${taxRate}% = ${taxAmount.toFixed(2)}元`, 'success');
-        
-        // 添加动画效果
-        taxPriceDisplay.parentElement.style.animation = 'pulse 0.5s ease';
-        setTimeout(() => {
-            taxPriceDisplay.parentElement.style.animation = '';
-        }, 500);
-    } else {
-        showMessage('请输入有效的价格和税率', 'warning');
     }
 }
 
 // ==================== Unity集成功能 ====================
 
 /**
- * 初始化Unity
- * 连接到你的Unity构建文件
+ * 初始化Unity WebGL
  */
 function initUnity() {
-    const unityLoading = document.getElementById('unity-loading');
-    showMessage('正在加载Unity动画...', 'info');
+    const unityContainer = document.getElementById('unity-container');
+    const unityCanvas = document.getElementById('unity-canvas');
+    const loadingMessage = document.getElementById('unity-loading');
     
-    // Unity配置 - 使用你的Unity/Build目录
+    if (typeof createUnityInstance === 'undefined') {
+        showMessage('Unity Loader未加载', 'error');
+        return;
+    }
+    
     const config = {
         dataUrl: "./Unity/Build/Unity.data",
         frameworkUrl: "./Unity/Build/Unity.framework.js",
@@ -321,300 +312,87 @@ function initUnity() {
         productName: "StarFalling",
         productVersion: "0.1.0",
     };
-
-    // Unity loader已经通过script标签加载
-    createUnityInstance(document.querySelector("#unity-canvas"), config, (progress) => {
-        // 加载进度
-        const percentage = Math.round(progress * 100);
-        console.log('Unity加载进度:', percentage + '%');
-        
-        // 更新加载提示
-        const loadingText = unityLoading.querySelector('p');
-        if (loadingText) {
-            loadingText.textContent = `加载Unity动画中... ${percentage}%`;
+    
+    createUnityInstance(unityCanvas, config, (progress) => {
+        const percent = Math.round(progress * 100);
+        if (loadingMessage) {
+            loadingMessage.textContent = `加载中... ${percent}%`;
         }
+        console.log(`Unity加载进度: ${percent}%`);
     }).then((instance) => {
         unityInstance = instance;
-        unityLoading.classList.add('hidden');
-        playAnimationBtn.disabled = false;
-        showMessage('Unity已加载完成!', 'success');
-        
-        console.log('Unity实例已创建:', unityInstance);
-        
-        // 自动发送数据到Unity
-        if (currentCalculation.taxPrice > 0) {
-            setTimeout(() => {
-                sendPriceData(currentCalculation.taxPrice.toFixed(2));
-            }, 500); // 等待Unity完全初始化
+        console.log('✅ Unity加载完成');
+        if (loadingMessage) {
+            loadingMessage.style.display = 'none';
         }
+        showMessage('Unity加载完成！', 'success');
+        
+        // Unity加载完成后自动播放动画
+        setTimeout(() => {
+            playAnimation();
+        }, 500);
+        
     }).catch((message) => {
-        console.error('Unity加载失败:', message);
-        unityLoading.innerHTML = `
-            <div style="color: #dc3545; text-align: center; padding: 20px;">
-                <h3>❌ Unity加载失败</h3>
-                <p style="margin: 15px 0;">错误信息: ${message}</p>
-                <p style="font-size: 0.9em; opacity: 0.8;">请确保Unity文件完整且路径正确</p>
-                <button class="btn btn-primary" onclick="goToStep1()" style="margin-top: 15px;">返回输入界面</button>
-            </div>
-        `;
+        console.error('❌ Unity加载失败:', message);
+        if (loadingMessage) {
+            loadingMessage.textContent = '加载失败';
+        }
         showMessage('Unity加载失败: ' + message, 'error');
     });
 }
 
 /**
- * 实际发送价格数据到Unity
- */
-function sendPriceData(taxAmount) {
-    if (!unityInstance) {
-        console.warn('Unity未加载,无法发送数据');
-        return;
-    }
-    
-    try {
-        // 发送税款到Unity的MasterController
-        // taxAmount 就是计算出的税款金额 - 转为整数
-        const taxAmountInt = Math.round(parseFloat(taxAmount));
-        unityInstance.SendMessage('MasterController', 'SetPrice', taxAmountInt.toString());
-        
-        playAnimationBtn.disabled = false;
-        showMessage('税款数据已发送到Unity!', 'success');
-        
-        console.log('✅ 税款已发送到Unity:', taxAmount);
-        console.log(`计算详情: ${currentCalculation.price}元 × ${currentCalculation.taxRate}% = ${taxAmount}元`);
-    } catch (error) {
-        console.error('❌ 发送数据到Unity失败:', error);
-        showMessage('发送数据失败: ' + error.message, 'error');
-        
-        // 即使发送失败,也允许播放动画
-        playAnimationBtn.disabled = false;
-        console.log('⚠️ 虽然发送失败,但仍可播放Unity动画');
-    }
-}
-
-/**
  * 播放Unity动画
  */
-function playUnityAnimation() {
+function playAnimation() {
     if (!unityInstance) {
         showMessage('Unity未加载', 'warning');
         return;
     }
     
     try {
-        // 添加到历史记录
-        addToHistory(
-            currentCalculation.price,
-            currentCalculation.taxRate,
-            currentCalculation.taxPrice
-        );
-        
-        // 再次发送税款数据（确保Unity收到最新数据）- 转为整数
+        // 发送税款数据（转为整数）
         const taxAmount = currentCalculation.taxPrice;
         const taxAmountInt = Math.round(taxAmount);
+        
+        // 发送价格到Unity
         unityInstance.SendMessage('MasterController', 'SetPrice', taxAmountInt.toString());
-        console.log('✅ 税款数据已发送（整数）:', taxAmountInt);
+        console.log('✅ 税款数据已发送:', taxAmountInt);
         
-        // 触发Unity中的动画播放
+        // 触发动画播放
         unityInstance.SendMessage('MasterController', 'PlayAnimation');
-        console.log('✅ 已发送播放动画指令到Unity');
+        console.log('✅ 已发送播放动画指令');
         
-        showMessage(`🎬 播放动画: ${currentCalculation.price}元 × ${currentCalculation.taxRate}% = ${taxAmount.toFixed(2)}元`, 'success');
+        showMessage(`🎬 动画播放中: ${currentCalculation.price}元 × ${currentCalculation.taxRate}% = ${taxAmountInt}元`, 'success');
         
-        // 禁用播放按钮,防止重复点击
-        playAnimationBtn.disabled = true;
-        playAnimationBtn.textContent = '⏸️ 播放中...';
-        
-        setTimeout(() => {
-            playAnimationBtn.disabled = false;
-            playAnimationBtn.textContent = '▶️ 播放动画';
-        }, 3000);
     } catch (error) {
-        console.error('播放动画失败:', error);
-        showMessage('播放动画失败: ' + error.message, 'error');
+        console.error('❌ Unity通信失败:', error);
+        showMessage('动画播放失败: ' + error.message, 'error');
     }
 }
 
-// ==================== 历史记录功能 ====================
-
-/**
- * 添加到历史记录
- */
-function addToHistory(price, taxRate, taxPrice) {
-    const record = {
-        time: new Date().toLocaleString('zh-CN'),
-        price: price.toFixed(2),
-        taxRate: taxRate.toFixed(2),
-        taxPrice: taxPrice.toFixed(2)
-    };
-    
-    historyData.unshift(record);
-    
-    // 限制历史记录数量
-    if (historyData.length > 10) {
-        historyData.pop();
-    }
-    
-    // 保存到本地存储
-    localStorage.setItem('priceHistory', JSON.stringify(historyData));
-    
-    // 更新显示
-    renderHistory();
-}
-
-/**
- * 加载历史记录
- */
-function loadHistory() {
-    const saved = localStorage.getItem('priceHistory');
-    if (saved) {
-        historyData = JSON.parse(saved);
-        renderHistory();
-    }
-}
-
-/**
- * 渲染历史记录
- */
-function renderHistory() {
-    historyBody.innerHTML = '';
-    
-    if (historyData.length === 0) {
-        historyBody.innerHTML = '<tr><td colspan="5" style="text-align: center;">暂无历史记录</td></tr>';
-        return;
-    }
-    
-    historyData.forEach((record, index) => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${record.time}</td>
-            <td>¥${record.price}</td>
-            <td>${record.taxRate}%</td>
-            <td>¥${record.taxPrice}</td>
-            <td><button onclick="replayRecord(${index})">重播</button></td>
-        `;
-        historyBody.appendChild(row);
-    });
-}
-
-/**
- * 重播历史记录
- */
-function replayRecord(index) {
-    const record = historyData[index];
-    
-    // 返回第一步
-    if (!step1Content.classList.contains('active')) {
-        goToStep1();
-    }
-    
-    // 填充数据
-    priceInput.value = record.price;
-    taxRateInput.value = record.taxRate;
-    autoCalculate();
-    
-    showMessage('已加载历史记录', 'info');
-    
-    // 滚动到输入区域
-    setTimeout(() => {
-        document.querySelector('.input-section').scrollIntoView({ 
-            behavior: 'smooth', 
-            block: 'center' 
-        });
-    }, 100);
-}
-
-// ==================== 工具函数 ====================
+// ==================== 辅助功能 ====================
 
 /**
  * 显示消息提示
  */
 function showMessage(message, type = 'info') {
     // 创建消息元素
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `message message-${type}`;
-    messageDiv.textContent = message;
-    messageDiv.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        padding: 15px 25px;
-        border-radius: 8px;
-        color: white;
-        font-weight: 600;
-        z-index: 10000;
-        animation: slideIn 0.3s ease;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    `;
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `message message-${type}`;
+    msgDiv.textContent = message;
     
-    // 根据类型设置颜色
-    const colors = {
-        success: '#28a745',
-        error: '#dc3545',
-        warning: '#ffc107',
-        info: '#17a2b8'
-    };
-    messageDiv.style.background = colors[type] || colors.info;
+    // 添加到页面
+    document.body.appendChild(msgDiv);
     
-    document.body.appendChild(messageDiv);
+    // 显示动画
+    setTimeout(() => msgDiv.classList.add('show'), 10);
     
-    // 3秒后自动移除
+    // 3秒后移除
     setTimeout(() => {
-        messageDiv.style.animation = 'slideOut 0.3s ease';
-        setTimeout(() => {
-            document.body.removeChild(messageDiv);
-        }, 300);
+        msgDiv.classList.remove('show');
+        setTimeout(() => msgDiv.remove(), 300);
     }, 3000);
+    
+    console.log(`[${type.toUpperCase()}] ${message}`);
 }
-
-// 添加动画样式
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes slideIn {
-        from {
-            transform: translateX(400px);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-    
-    @keyframes slideOut {
-        from {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        to {
-            transform: translateX(400px);
-            opacity: 0;
-        }
-    }
-`;
-document.head.appendChild(style);
-
-// ==================== Unity通信接口 ====================
-
-/**
- * 供Unity调用的JavaScript函数
- * Unity可以通过Application.ExternalCall调用这些函数
- */
-window.UnityCallbacks = {
-    // Unity动画播放完成回调
-    onAnimationComplete: function() {
-        console.log('Unity动画播放完成');
-        showMessage('动画播放完成', 'success');
-    },
-    
-    // Unity初始化完成回调
-    onUnityReady: function() {
-        console.log('Unity初始化完成');
-        playAnimationBtn.disabled = false;
-    },
-    
-    // Unity错误回调
-    onUnityError: function(error) {
-        console.error('Unity错误:', error);
-        showMessage('Unity错误: ' + error, 'error');
-    }
-};

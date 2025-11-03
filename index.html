@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>商品价格识别与税价计算</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- 引入二维码扫描库 -->
+    <script src="https://unpkg.com/jsqr@1.4.0/dist/jsQR.js"></script>
 </head>
 <body>
     <div class="container">
@@ -29,17 +31,19 @@
         <main>
             <!-- 第一步：价格输入界面 -->
             <div id="step1-content" class="step-content active">
-                <!-- 摄像头区域 -->
+                <!-- 二维码扫描区域 -->
                 <section class="camera-section">
-                    <h2>📷 扫码识别</h2>
-                    <div class="camera-container">
+                    <h2>📷 二维码扫描</h2>
+                    <div class="qr-scanner-container">
                         <video id="video" autoplay playsinline></video>
                         <canvas id="canvas" style="display: none;"></canvas>
+                        <div class="qr-overlay">
+                            <div class="qr-frame"></div>
+                            <p class="qr-hint">将二维码对准框内</p>
+                        </div>
                     </div>
-                    <div class="camera-controls">
-                        <button id="startCamera" class="btn btn-primary">启动摄像头</button>
-                        <button id="captureImage" class="btn btn-success" disabled>拍照识别</button>
-                        <button id="stopCamera" class="btn btn-danger" disabled>停止摄像头</button>
+                    <div class="qr-status">
+                        <span id="qrStatus">等待启动扫描...</span>
                     </div>
                 </section>
 
@@ -66,8 +70,7 @@
                         </div>
                     </div>
                     <div class="action-buttons">
-                        <button id="calculate" class="btn btn-info">💰 计算税额</button>
-                        <button id="nextStep" class="btn btn-primary" disabled>▶️ 进入动画展示</button>
+                        <button id="nextStep" class="btn btn-primary">▶️ 进入动画展示</button>
                     </div>
                 </section>
 
@@ -85,24 +88,6 @@
 
             <!-- 第二步：Unity动画展示界面 -->
             <div id="step2-content" class="step-content">
-                <!-- 价格信息卡片 -->
-                <section class="price-info-card">
-                    <h2>📊 计算信息</h2>
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <span class="info-label">商品价格:</span>
-                            <span class="info-value" id="displayPrice">¥0.00</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">税率:</span>
-                            <span class="info-value" id="displayTaxRate">0%</span>
-                        </div>
-                        <div class="info-item highlight">
-                            <span class="info-value" id="displayTaxPrice">¥0.00</span>
-                        </div>
-                    </div>
-                </section>
-
                 <!-- Unity动画区域 -->
                 <section class="unity-section">
                     <h2>🎬 动画展示</h2>
@@ -116,29 +101,7 @@
                         </div>
                     </div>
                     <div class="unity-controls">
-                        <button id="playAnimation" class="btn btn-success btn-large">▶️ 播放动画</button>
                         <button id="backToInput" class="btn btn-secondary">⬅️ 返回输入</button>
-                    </div>
-                </section>
-
-                <!-- 识别历史 -->
-                <section class="history-section">
-                    <h2>📝 识别历史</h2>
-                    <div class="history-container">
-                        <table id="historyTable">
-                            <thead>
-                                <tr>
-                                    <th>时间</th>
-                                    <th>价格</th>
-                                    <th>税率</th>
-                                    <th>税额</th>
-                                    <th>操作</th>
-                                </tr>
-                            </thead>
-                            <tbody id="historyBody">
-                                <!-- 动态填充 -->
-                            </tbody>
-                        </table>
                     </div>
                 </section>
             </div>
