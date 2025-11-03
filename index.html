@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品价格识别与税价计算</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>智能商品税价计算系统</h1>
+            <p>扫码识别或手动输入商品信息</p>
+        </header>
+
+        <!-- 步骤指示器 -->
+        <div class="step-indicator">
+            <div class="step active" id="step1-indicator">
+                <div class="step-number">1</div>
+                <div class="step-text">输入价格信息</div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" id="step2-indicator">
+                <div class="step-number">2</div>
+                <div class="step-text">动画展示</div>
+            </div>
+        </div>
+
+        <main>
+            <!-- 第一步：价格输入界面 -->
+            <div id="step1-content" class="step-content active">
+                <!-- 摄像头区域 -->
+                <section class="camera-section">
+                    <h2>📷 扫码识别</h2>
+                    <div class="camera-container">
+                        <video id="video" autoplay playsinline></video>
+                        <canvas id="canvas" style="display: none;"></canvas>
+                    </div>
+                    <div class="camera-controls">
+                        <button id="startCamera" class="btn btn-primary">启动摄像头</button>
+                        <button id="captureImage" class="btn btn-success" disabled>拍照识别</button>
+                        <button id="stopCamera" class="btn btn-danger" disabled>停止摄像头</button>
+                    </div>
+                </section>
+
+                <div class="divider">
+                    <span>或</span>
+                </div>
+
+                <!-- 手动输入区域 -->
+                <section class="input-section">
+                    <h2>✍️ 手动输入</h2>
+                    <div class="input-container">
+                        <div class="input-item">
+                            <label>商品价格 (¥):</label>
+                            <input type="number" id="price" step="0.01" placeholder="请输入商品价格" min="0">
+                        </div>
+                        <div class="input-item">
+                            <label>税率 (%):</label>
+                            <input type="number" id="taxRate" step="0.01" placeholder="请输入税率" min="0" max="100">
+                        </div>
+                        <div class="input-item result-highlight">
+                            <div class="tax-price-display">
+                                <span id="taxPrice">¥0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button id="calculate" class="btn btn-info">💰 计算税额</button>
+                        <button id="nextStep" class="btn btn-primary" disabled>▶️ 进入动画展示</button>
+                    </div>
+                </section>
+
+                <!-- 快速预设 -->
+                <section class="preset-section">
+                    <h3>快速预设税率</h3>
+                    <div class="preset-buttons">
+                        <button class="btn-preset" data-rate="6">6% 增值税</button>
+                        <button class="btn-preset" data-rate="13">13% 增值税</button>
+                        <button class="btn-preset" data-rate="10">10% 服务税</button>
+                        <button class="btn-preset" data-rate="5">5% 消费税</button>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 第二步：Unity动画展示界面 -->
+            <div id="step2-content" class="step-content">
+                <!-- 价格信息卡片 -->
+                <section class="price-info-card">
+                    <h2>📊 计算信息</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">商品价格:</span>
+                            <span class="info-value" id="displayPrice">¥0.00</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">税率:</span>
+                            <span class="info-value" id="displayTaxRate">0%</span>
+                        </div>
+                        <div class="info-item highlight">
+                            <span class="info-value" id="displayTaxPrice">¥0.00</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Unity动画区域 -->
+                <section class="unity-section">
+                    <h2>🎬 动画展示</h2>
+                    <div class="unity-container">
+                        <div id="unity-canvas-container">
+                            <canvas id="unity-canvas"></canvas>
+                        </div>
+                        <div class="unity-loading" id="unity-loading">
+                            <div class="spinner"></div>
+                            <p>加载Unity动画中...</p>
+                        </div>
+                    </div>
+                    <div class="unity-controls">
+                        <button id="playAnimation" class="btn btn-success btn-large">▶️ 播放动画</button>
+                        <button id="backToInput" class="btn btn-secondary">⬅️ 返回输入</button>
+                    </div>
+                </section>
+
+                <!-- 识别历史 -->
+                <section class="history-section">
+                    <h2>📝 识别历史</h2>
+                    <div class="history-container">
+                        <table id="historyTable">
+                            <thead>
+                                <tr>
+                                    <th>时间</th>
+                                    <th>价格</th>
+                                    <th>税率</th>
+                                    <th>税额</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="historyBody">
+                                <!-- 动态填充 -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 智能商品税价计算系统</p>
+        </footer>
+    </div>
+
+    <!-- Unity Loader -->
+    <script src="./Unity/Build/Unity.loader.js"></script>
+    
+    <!-- 主要脚本 -->
+    <script src="./script.js"></script>
+</body>
+</html>
