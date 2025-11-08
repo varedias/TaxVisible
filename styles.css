@@ -496,16 +496,18 @@ section h3 {
     font-weight: bold;
 }
 
-/* Unity动画区域 */
+/* Unity动画区域 - 全屏显示 */
 .unity-container {
-    position: relative;
-    width: 100%;
-    max-width: 960px;
-    margin: 0 auto 20px;
-    aspect-ratio: 16/9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
     background: #000;
-    border-radius: 10px;
+    border-radius: 0;
     overflow: hidden;
+    z-index: 2000;
 }
 
 #unity-canvas-container {
@@ -557,10 +559,33 @@ section h3 {
 }
 
 .unity-controls {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2001;
     display: flex;
     gap: 10px;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.unity-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    z-index: 2000;
+}
+
+.unity-section h2 {
+    display: none;
 }
 
 /* 历史记录区域 */
