@@ -237,7 +237,7 @@ function goToStep2() {
     // 初始化Unity并自动播放动画
     if (!unityInstance) {
         if (isMobile) {
-            showMessage('📱 移动设备加载中，文件约15.5MB，请耐心等待...', 'info');
+            showMessage('📱 移动设备已启用CDN加速，正在加载15.5MB动画文件...', 'info');
         }
         initUnity();
     } else {
@@ -297,8 +297,9 @@ function autoCalculate() {
 
 /**
  * 初始化Unity WebGL
+ * @param {boolean} forceFallback - 是否强制使用本地路径（CDN失败时）
  */
-function initUnity() {
+function initUnity(forceFallback = false) {
     const unityContainer = document.getElementById('unity-container');
     const unityCanvas = document.getElementById('unity-canvas');
     const loadingMessage = document.getElementById('unity-loading');
@@ -310,10 +311,18 @@ function initUnity() {
         return;
     }
     
+    // 使用jsDelivr CDN加速（中国大陆节点），回退到GitHub Pages
+    const useCDN = !forceFallback; // forceFallback时使用本地路径
+    const cdnBase = "https://cdn.jsdelivr.net/gh/varedias/TaxVisible@main/Unity/Build";
+    const localBase = "./Unity/Build";
+    const baseUrl = useCDN ? cdnBase : localBase;
+    
+    console.log(`📦 Unity加载源: ${useCDN ? 'jsDelivr CDN (中国节点加速)' : 'GitHub Pages (备用)'}`);
+    
     const config = {
-        dataUrl: "./Unity/Build/Unity.data.unityweb",
-        frameworkUrl: "./Unity/Build/Unity.framework.js.unityweb",
-        codeUrl: "./Unity/Build/Unity.wasm.unityweb",
+        dataUrl: `${baseUrl}/Unity.data.unityweb`,
+        frameworkUrl: `${baseUrl}/Unity.framework.js.unityweb`,
+        codeUrl: `${baseUrl}/Unity.wasm.unityweb`,
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "StarFalling",
@@ -325,12 +334,13 @@ function initUnity() {
         const downloadedMB = (15.5 * progress).toFixed(1);
         
         if (loadingText) {
-            loadingText.textContent = `加载中... ${percent}% (${downloadedMB}/15.5 MB)`;
+            const cdnStatus = useCDN ? '(CDN加速)' : '';
+            loadingText.textContent = `加载中... ${percent}% (${downloadedMB}/15.5 MB) ${cdnStatus}`;
         }
         if (progressBar) {
             progressBar.style.width = percent + '%';
         }
-        console.log(`Unity加载进度: ${percent}% - ${downloadedMB}MB`);
+        console.log(`Unity加载进度: ${percent}% - ${downloadedMB}MB ${useCDN ? '[CDN]' : '[本地]'}`);
     }).then((instance) => {
         unityInstance = instance;
         console.log('✅ Unity加载完成');
@@ -346,10 +356,24 @@ function initUnity() {
         
     }).catch((message) => {
         console.error('❌ Unity加载失败:', message);
-        if (loadingMessage) {
-            loadingMessage.textContent = '加载失败';
+        
+        // 如果使用CDN失败，尝试回退到本地路径
+        if (useCDN && !window.cdnFallbackAttempted) {
+            console.log('🔄 CDN加速失败，切换到GitHub Pages备用服务器...');
+            window.cdnFallbackAttempted = true;
+            if (loadingText) {
+                loadingText.textContent = 'CDN失败，切换到备用服务器...';
+            }
+            // 重新调用initUnity，使用forceFallback参数
+            setTimeout(() => {
+                initUnity(true); // 强制使用本地路径
+            }, 2000);
+        } else {
+            if (loadingMessage) {
+                loadingMessage.textContent = '加载失败';
+            }
+            showMessage('Unity加载失败: ' + message, 'error');
         }
-        showMessage('Unity加载失败: ' + message, 'error');
     });
 }
 
