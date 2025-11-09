@@ -231,15 +231,20 @@ function goToStep2() {
     step1Indicator.classList.remove('active');
     step2Indicator.classList.add('active');
     
+    // 检测移动设备
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
     // 初始化Unity并自动播放动画
     if (!unityInstance) {
+        if (isMobile) {
+            showMessage('📱 移动设备加载中，文件约17MB，请耐心等待...', 'info');
+        }
         initUnity();
     } else {
         // Unity已加载，直接播放动画
         playAnimation();
     }
     
-    showMessage('正在加载动画...', 'info');
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -317,13 +322,15 @@ function initUnity() {
     
     createUnityInstance(unityCanvas, config, (progress) => {
         const percent = Math.round(progress * 100);
+        const downloadedMB = (17 * progress).toFixed(1);
+        
         if (loadingText) {
-            loadingText.textContent = `加载中... ${percent}%`;
+            loadingText.textContent = `加载中... ${percent}% (${downloadedMB}/17 MB)`;
         }
         if (progressBar) {
             progressBar.style.width = percent + '%';
         }
-        console.log(`Unity加载进度: ${percent}%`);
+        console.log(`Unity加载进度: ${percent}% - ${downloadedMB}MB`);
     }).then((instance) => {
         unityInstance = instance;
         console.log('✅ Unity加载完成');
