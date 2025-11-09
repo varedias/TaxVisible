@@ -237,7 +237,7 @@ function goToStep2() {
     // 初始化Unity并自动播放动画
     if (!unityInstance) {
         if (isMobile) {
-            showMessage('📱 移动设备加载中，文件约17MB，请耐心等待...', 'info');
+            showMessage('📱 移动设备加载中，文件约15.5MB，请耐心等待...', 'info');
         }
         initUnity();
     } else {
@@ -322,10 +322,10 @@ function initUnity() {
     
     createUnityInstance(unityCanvas, config, (progress) => {
         const percent = Math.round(progress * 100);
-        const downloadedMB = (17 * progress).toFixed(1);
+        const downloadedMB = (15.5 * progress).toFixed(1);
         
         if (loadingText) {
-            loadingText.textContent = `加载中... ${percent}% (${downloadedMB}/17 MB)`;
+            loadingText.textContent = `加载中... ${percent}% (${downloadedMB}/15.5 MB)`;
         }
         if (progressBar) {
             progressBar.style.width = percent + '%';
