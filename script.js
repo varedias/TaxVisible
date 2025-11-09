@@ -306,9 +306,9 @@ function initUnity() {
     }
     
     const config = {
-        dataUrl: "./Unity/Build/Unity.data",
-        frameworkUrl: "./Unity/Build/Unity.framework.js",
-        codeUrl: "./Unity/Build/Unity.wasm",
+        dataUrl: "./Unity/Build/Unity.data.unityweb",
+        frameworkUrl: "./Unity/Build/Unity.framework.js.unityweb",
+        codeUrl: "./Unity/Build/Unity.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "StarFalling",
