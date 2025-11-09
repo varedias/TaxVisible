@@ -313,10 +313,6 @@ function initUnity() {
         companyName: "DefaultCompany",
         productName: "StarFalling",
         productVersion: "0.1.0",
-        // 性能优化配置
-        compressedFormat: "br", // 启用Brotli压缩（如果服务器支持）
-        matchWebGLToCanvasSize: false, // 不自动匹配canvas大小，提升性能
-        devicePixelRatio: 1, // 固定像素比，避免高分辨率设备性能问题
     };
     
     createUnityInstance(unityCanvas, config, (progress) => {
