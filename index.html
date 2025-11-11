@@ -44,30 +44,12 @@
     </div>
 
     <div class="container" id="main-container" style="display: none;">
-        <header>
-            <h1>智能商品税价计算系统</h1>
-            <p>扫码识别或手动输入商品信息</p>
-        </header>
-
-        <!-- 步骤指示器 -->
-        <div class="step-indicator">
-            <div class="step active" id="step1-indicator">
-                <div class="step-number">1</div>
-                <div class="step-text">输入价格信息</div>
-            </div>
-            <div class="step-line"></div>
-            <div class="step" id="step2-indicator">
-                <div class="step-number">2</div>
-                <div class="step-text">动画展示</div>
-            </div>
-        </div>
-
         <main>
             <!-- 第一步：价格输入界面 -->
             <div id="step1-content" class="step-content active">
                 <!-- 二维码扫描区域 -->
                 <section class="camera-section">
-                    <h2>📷 二维码扫描</h2>
+                    <h2>二维码扫描</h2>
                     <div class="qr-scanner-container">
                         <video id="video" autoplay playsinline></video>
                         <canvas id="canvas" style="display: none;"></canvas>
@@ -87,7 +69,7 @@
 
                 <!-- 手动输入区域 -->
                 <section class="input-section">
-                    <h2>✍️ 手动输入</h2>
+                    <h2>手动输入</h2>
                     <div class="input-container">
                         <div class="input-item">
                             <label>商品价格 (¥):</label>
