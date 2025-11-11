@@ -3,13 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>商品价格识别与税价计算</title>
+    <title>税款可视化 - 看见你的贡献</title>
     <link rel="stylesheet" href="styles.css">
     <!-- 引入二维码扫描库 -->
     <script src="https://unpkg.com/jsqr@1.4.0/dist/jsQR.js"></script>
 </head>
 <body>
-    <div class="container">
+    <!-- 引导欢迎页面 -->
+    <div id="welcome-page" class="welcome-page">
+        <div class="welcome-content">
+            <!-- 顶部标题 -->
+            <h1 class="welcome-title">税款可视化</h1>
+            
+            <!-- 中央图标 -->
+            <div class="welcome-icon">
+                <div class="circle-badge">
+                    <svg class="star-icon" viewBox="0 0 51 48" fill="none">
+                        <path d="M25.5 0L31.3124 18.1459H50.2901L35.0889 29.2082L40.9012 47.3541L25.5 36.2918L10.0988 47.3541L15.9111 29.2082L0.70993 18.1459H19.6876L25.5 0Z" fill="currentColor"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- 副标题 -->
+            <p class="welcome-subtitle">看见你的贡献，感受税收的力量</p>
+            
+            <!-- 扫码按钮 -->
+            <button class="scan-button" onclick="enterMainApp()">
+                <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <rect x="3" y="3" width="7" height="7" stroke-width="2"/>
+                    <rect x="14" y="3" width="7" height="7" stroke-width="2"/>
+                    <rect x="3" y="14" width="7" height="7" stroke-width="2"/>
+                    <rect x="14" y="14" width="7" height="7" stroke-width="2"/>
+                </svg>
+                扫税码
+            </button>
+            
+            <!-- 底部说明 -->
+            <p class="welcome-hint">扫描商品条码，查看税款贡献</p>
+        </div>
+    </div>
+
+    <div class="container" id="main-container" style="display: none;">
         <header>
             <h1>智能商品税价计算系统</h1>
             <p>扫码识别或手动输入商品信息</p>

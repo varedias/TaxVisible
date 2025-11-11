@@ -28,19 +28,67 @@ let currentCalculation = {
     taxPrice: 0
 };
 
+// ==================== 欢迎页面功能 ====================
+
+/**
+ * 进入主应用
+ */
+function enterMainApp() {
+    const welcomePage = document.getElementById('welcome-page');
+    const mainContainer = document.getElementById('main-container');
+    
+    // 淡出欢迎页面
+    welcomePage.style.animation = 'fadeOut 0.5s ease-out forwards';
+    
+    setTimeout(() => {
+        welcomePage.style.display = 'none';
+        mainContainer.style.display = 'block';
+        mainContainer.style.animation = 'fadeIn 0.5s ease-out';
+        
+        // 进入主应用后自动启动二维码扫描
+        setTimeout(() => {
+            startQRScanner();
+        }, 300);
+    }, 500);
+}
+
+// 添加fadeOut动画到CSS（将在下一步添加）
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);
+
 // 初始化
 document.addEventListener('DOMContentLoaded', function() {
     video = document.getElementById('video');
     canvas = document.getElementById('canvas');
-    ctx = canvas.getContext('2d');
+    if (canvas) {
+        ctx = canvas.getContext('2d');
+    }
     
-    // 绑定事件
-    nextStepBtn.addEventListener('click', goToStep2);
-    backToInputBtn.addEventListener('click', goToStep1);
+    // 绑定事件（仅当元素存在时）
+    if (nextStepBtn) {
+        nextStepBtn.addEventListener('click', goToStep2);
+    }
+    if (backToInputBtn) {
+        backToInputBtn.addEventListener('click', goToStep1);
+    }
     
     // 监听输入变化自动计算
-    priceInput.addEventListener('input', autoCalculate);
-    taxRateInput.addEventListener('input', autoCalculate);
+    if (priceInput) {
+        priceInput.addEventListener('input', autoCalculate);
+    }
+    if (taxRateInput) {
+        taxRateInput.addEventListener('input', autoCalculate);
+    }
     
     // 快速预设按钮
     document.querySelectorAll('.btn-preset').forEach(btn => {
@@ -50,8 +98,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // 自动启动二维码扫描
-    startQRScanner();
+    // 不再自动启动扫描，等待用户点击"扫税码"按钮
+    console.log('✅ 页面加载完成，等待用户进入主应用');
 });
 
 // ==================== 二维码扫描功能 ====================
