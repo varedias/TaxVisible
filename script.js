@@ -367,6 +367,14 @@ function initUnity(forceFallback = false) {
     
     console.log(`📦 Unity加载源: ${useCDN ? 'jsDelivr CDN (中国节点加速)' : 'GitHub Pages (备用)'}`);
     
+    // 立即显示初始状态
+    if (loadingText) {
+        const cdnStatus = useCDN ? '(CDN加速)' : '';
+        loadingText.textContent = `开始加载... 0% (0/15.5 MB) ${cdnStatus}`;
+    }
+    if (progressBar) {
+        progressBar.style.width = '0%';
+    }    
     const config = {
         dataUrl: `${baseUrl}/Unity.data.unityweb`,
         frameworkUrl: `${baseUrl}/Unity.framework.js.unityweb`,

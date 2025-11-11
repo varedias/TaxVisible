@@ -758,13 +758,15 @@ section h3 {
 }
 
 .loading-progress {
-    width: 320px;
-    height: 12px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    height: 16px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
     overflow: hidden;
-    margin-top: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    margin: 25px auto 0;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .loading-progress-bar {
@@ -773,7 +775,27 @@ section h3 {
     width: 0%;
     transition: width 0.3s ease;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+    box-shadow: 0 0 15px rgba(74, 222, 128, 0.6);
+    position: relative;
+}
+
+.loading-progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.3) 50%, 
+        transparent 100%);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
 }
 
 .spinner {
