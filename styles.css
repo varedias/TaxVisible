@@ -750,25 +750,30 @@ section h3 {
 }
 
 .unity-loading p {
-    font-size: 1.2em;
+    font-size: 1.3em;
     margin-top: 10px;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.5px;
 }
 
 .loading-progress {
-    width: 300px;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.2);
+    width: 320px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     overflow: hidden;
     margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .loading-progress-bar {
     height: 100%;
-    background: white;
+    background: linear-gradient(90deg, #4ade80 0%, #22c55e 100%);
     width: 0%;
     transition: width 0.3s ease;
     border-radius: 10px;
+    box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
 }
 
 .spinner {
