@@ -274,10 +274,13 @@ function goToStep2() {
     stopQRScanner();
     
     // 切换界面
-    step1Content.classList.remove('active');
-    step2Content.classList.add('active');
-    step1Indicator.classList.remove('active');
-    step2Indicator.classList.add('active');
+    if (step1Content) {
+        step1Content.classList.remove('active');
+    }
+    if (step2Content) {
+        step2Content.classList.add('active');
+    }
+    // 步骤指示器已删除，不再需要更新
     
     // 检测移动设备
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -301,10 +304,13 @@ function goToStep2() {
  */
 function goToStep1() {
     // 切换界面
-    step2Content.classList.remove('active');
-    step1Content.classList.add('active');
-    step2Indicator.classList.remove('active');
-    step1Indicator.classList.add('active');
+    if (step2Content) {
+        step2Content.classList.remove('active');
+    }
+    if (step1Content) {
+        step1Content.classList.add('active');
+    }
+    // 步骤指示器已删除，不再需要更新
     
     // 重新启动二维码扫描
     startQRScanner();
@@ -359,17 +365,24 @@ function initUnity(forceFallback = false) {
         return;
     }
     
-    // 使用jsDelivr CDN加速（中国大陆节点），回退到GitHub Pages
-    const useCDN = !forceFallback; // forceFallback时使用本地路径
+    // 检测是否在本地环境
+    const isLocalhost = window.location.hostname === 'localhost' || 
+                       window.location.hostname === '127.0.0.1' ||
+                       window.location.protocol === 'file:';
+    
+    // 本地测试时强制使用本地路径，生产环境使用CDN
+    const useCDN = !forceFallback && !isLocalhost;
     const cdnBase = "https://cdn.jsdelivr.net/gh/varedias/TaxVisible@main/Unity/Build";
     const localBase = "./Unity/Build";
     const baseUrl = useCDN ? cdnBase : localBase;
     
-    console.log(`📦 Unity加载源: ${useCDN ? 'jsDelivr CDN (中国节点加速)' : 'GitHub Pages (备用)'}`);
+    const sourceType = isLocalhost ? '本地文件' : (useCDN ? 'jsDelivr CDN (中国节点加速)' : 'GitHub Pages (备用)');
+    console.log(`📦 Unity加载源: ${sourceType}`);
+    console.log(`📁 Base URL: ${baseUrl}`);
     
     // 立即显示初始状态
     if (loadingText) {
-        const cdnStatus = useCDN ? '(CDN加速)' : '';
+        const cdnStatus = useCDN ? '(CDN加速)' : (isLocalhost ? '(本地测试)' : '');
         loadingText.textContent = `开始加载... 0% (0/15.5 MB) ${cdnStatus}`;
     }
     if (progressBar) {
@@ -385,18 +398,21 @@ function initUnity(forceFallback = false) {
         productVersion: "0.1.0",
     };
     
+    console.log('🎮 Unity配置:', config);
+    console.log('📊 开始创建Unity实例...');
+    
     createUnityInstance(unityCanvas, config, (progress) => {
         const percent = Math.round(progress * 100);
         const downloadedMB = (15.5 * progress).toFixed(1);
         
         if (loadingText) {
-            const cdnStatus = useCDN ? '(CDN加速)' : '';
+            const cdnStatus = useCDN ? '(CDN加速)' : (isLocalhost ? '(本地测试)' : '');
             loadingText.textContent = `加载中... ${percent}% (${downloadedMB}/15.5 MB) ${cdnStatus}`;
         }
         if (progressBar) {
             progressBar.style.width = percent + '%';
         }
-        console.log(`Unity加载进度: ${percent}% - ${downloadedMB}MB ${useCDN ? '[CDN]' : '[本地]'}`);
+        console.log(`📈 Unity加载进度: ${percent}% - ${downloadedMB}MB`);
     }).then((instance) => {
         unityInstance = instance;
         console.log('✅ Unity加载完成');
