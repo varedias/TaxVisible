@@ -1,0 +1,366 @@
+- generic [ref=e2004]:
+  - banner [ref=e2005]:
+    - generic [ref=e2007]:
+      - link "DongShiDi Global" [ref=e2009] [cursor=pointer]:
+        - /url: "#/en"
+        - generic [ref=e2010]: DongShiDi
+        - generic [ref=e2011]: Global
+      - navigation [ref=e2012]:
+        - link "Home" [ref=e2013] [cursor=pointer]:
+          - /url: "#/en"
+        - link "Discovery" [ref=e2014] [cursor=pointer]:
+          - /url: "#/en/discovery"
+        - link "Leasing" [ref=e2015] [cursor=pointer]:
+          - /url: "#/en/leasing"
+        - link "Marketplace" [ref=e2016] [cursor=pointer]:
+          - /url: "#/en/mall"
+        - link "Suppliers" [ref=e2017] [cursor=pointer]:
+          - /url: "#/en/suppliers"
+      - generic [ref=e2018]:
+        - textbox "Search products, content..." [ref=e2019]
+        - button [ref=e2020]:
+          - img [ref=e2021]
+      - generic [ref=e2024]:
+        - link "CN" [ref=e2025] [cursor=pointer]:
+          - /url: "#/"
+          - img [ref=e2026]
+          - generic [ref=e2029]: CN
+        - generic [ref=e2031]:
+          - link "Sign In" [ref=e2032] [cursor=pointer]:
+            - /url: "#/en/login"
+          - link "Join Free" [ref=e2033] [cursor=pointer]:
+            - /url: "#/en/register"
+  - main [ref=e2034]:
+    - generic [ref=e2544]:
+      - generic [ref=e2547]:
+        - generic [ref=e2548]:
+          - img [ref=e2549]
+          - textbox "Search equipment categories, product models, suppliers..." [ref=e2552]
+        - button "Search" [ref=e2553]
+      - generic [ref=e2554]:
+        - generic [ref=e2555]:
+          - generic [ref=e2556]:
+            - generic [ref=e2557]:
+              - heading "Discovery & Recommendations" [level=2] [ref=e2558]: Discovery & Recommendations
+              - paragraph [ref=e2560]: Curated reviews, factory tours and hands-on content with full titles, summaries and tags.
+            - button "View More" [ref=e2561]:
+              - text: View More
+              - img [ref=e2562]
+          - generic [ref=e2564]:
+            - generic [ref=e2565] [cursor=pointer]:
+              - generic [ref=e2566]:
+                - img "民崛智能方案纪实：复杂来料下的视觉分拣稳定性验证" [ref=e2567]
+                - generic:
+                  - generic:
+                    - img
+              - generic [ref=e2568]:
+                - generic [ref=e2569]:
+                  - generic [ref=e2570]: Video
+                  - generic [ref=e2571]: Review
+                  - generic [ref=e2572]: 刚刚
+                - heading "民崛智能方案纪实：复杂来料下的视觉分拣稳定性验证" [level=3] [ref=e2573]
+                - paragraph [ref=e2574]: 补充复杂来料、多规格混流下的识别与分拣稳定性展示，让发现页前排内容更完整地覆盖设备能力与应用场景。
+                - generic [ref=e2575]:
+                  - generic [ref=e2576]: "#复杂来料"
+                  - generic [ref=e2577]: "#稳定性验证"
+                  - generic [ref=e2578]: "#视觉分拣"
+                - generic [ref=e2579]:
+                  - generic [ref=e2580]: 民崛智能
+                  - generic [ref=e2582]:
+                    - img [ref=e2583]
+                    - text: 428,000
+            - generic [ref=e2586] [cursor=pointer]:
+              - generic [ref=e2587]:
+                - img "民崛智能分拣现场实拍：高速识别与自动分流演示" [ref=e2588]
+                - generic:
+                  - generic:
+                    - img
+              - generic [ref=e2589]:
+                - generic [ref=e2590]:
+                  - generic [ref=e2591]: Video
+                  - generic [ref=e2592]: Factory Visit
+                  - generic [ref=e2593]: 刚刚
+                - heading "民崛智能分拣现场实拍：高速识别与自动分流演示" [level=3] [ref=e2594]
+                - paragraph [ref=e2595]: 聚焦民崛智能现场分拣节拍、识别速度和自动分流动作，让客户在发现页先看到更直观的设备实拍效果。
+                - generic [ref=e2596]:
+                  - generic [ref=e2597]: "#智能分拣"
+                  - generic [ref=e2598]: "#产线实拍"
+                  - generic [ref=e2599]: "#自动分流"
+                - generic [ref=e2600]:
+                  - generic [ref=e2601]: 民崛智能
+                  - generic [ref=e2603]:
+                    - img [ref=e2604]
+                    - text: 486,000
+            - generic [ref=e2607] [cursor=pointer]:
+              - generic [ref=e2608]:
+                - img "Halcon机器视觉完整教程 | 从入门到精通(1/50)" [ref=e2609]
+                - generic:
+                  - generic:
+                    - img
+              - generic [ref=e2610]:
+                - generic [ref=e2611]:
+                  - generic [ref=e2612]: Video
+                  - generic [ref=e2613]: Buying Guide
+                  - generic [ref=e2614]: 1个月前
+                - heading "Halcon机器视觉完整教程 | 从入门到精通(1/50)" [level=3] [ref=e2615]
+                - paragraph [ref=e2616]: 视觉教程大师 shares insights on Halcon, 教程, and Buying Guide — great for understanding use cases, solution highlights, and procurement tips.
+                - generic [ref=e2617]:
+                  - generic [ref=e2618]: "#Halcon"
+                  - generic [ref=e2619]: "#教程"
+                  - generic [ref=e2620]: "#入门"
+                - generic [ref=e2621]:
+                  - generic [ref=e2622]: 视觉教程大师
+                  - generic [ref=e2624]:
+                    - img [ref=e2625]
+                    - text: 567,000
+            - generic [ref=e2628] [cursor=pointer]:
+              - img "基于视觉的智能分拣机市场——全球预测2026-2032" [ref=e2630]
+              - generic [ref=e2631]:
+                - generic [ref=e2632]:
+                  - generic [ref=e2633]:
+                    - img [ref=e2634]
+                    - text: Article
+                  - generic [ref=e2637]: Industry Insight
+                  - generic [ref=e2638]: 今日精选
+                - heading "基于视觉的智能分拣机市场——全球预测2026-2032" [level=3] [ref=e2639]
+                - paragraph [ref=e2640]: 基于视觉的智能分拣机市场从2025年的23.8亿美元增长到2026年的26.7亿美元。预计其复合年增长率将保持在13.20%,到2032年达到56.8亿美元。
+                - generic [ref=e2641]:
+                  - generic [ref=e2642]: "#智能分拣"
+                  - generic [ref=e2643]: "#市场预测"
+                  - generic [ref=e2644]: "#采购策略"
+                - generic [ref=e2645]:
+                  - generic [ref=e2646]: 民崛研究院
+                  - generic [ref=e2648]:
+                    - img [ref=e2649]
+                    - text: 528,000
+        - generic [ref=e2652]:
+          - heading "Equipment Categories" [level=2] [ref=e2654]: Equipment Categories
+          - generic [ref=e2656]:
+            - generic [ref=e2658]:
+              - generic [ref=e2660] [cursor=pointer]:
+                - generic [ref=e2661]:
+                  - generic [ref=e2662]: "01"
+                  - generic [ref=e2663]: AI Vision Inspection
+                - img [ref=e2664]
+              - generic [ref=e2667] [cursor=pointer]:
+                - generic [ref=e2668]:
+                  - generic [ref=e2669]: "02"
+                  - generic [ref=e2670]: Industrial Cameras
+                - img [ref=e2671]
+              - generic [ref=e2674] [cursor=pointer]:
+                - generic [ref=e2675]:
+                  - generic [ref=e2676]: "03"
+                  - generic [ref=e2677]: Lenses & Lighting
+                - img [ref=e2678]
+              - generic [ref=e2681] [cursor=pointer]:
+                - generic [ref=e2682]:
+                  - generic [ref=e2683]: "04"
+                  - generic [ref=e2684]: Frame Grabbers
+                - img [ref=e2685]
+              - generic [ref=e2688] [cursor=pointer]:
+                - generic [ref=e2689]:
+                  - generic [ref=e2690]: "05"
+                  - generic [ref=e2691]: Vision Software
+                - img [ref=e2692]
+              - generic [ref=e2695] [cursor=pointer]:
+                - generic [ref=e2696]:
+                  - generic [ref=e2697]: "06"
+                  - generic [ref=e2698]: Robotics & Automation
+                - img [ref=e2699]
+              - generic [ref=e2702] [cursor=pointer]:
+                - generic [ref=e2703]:
+                  - generic [ref=e2704]: "07"
+                  - generic [ref=e2705]: Measuring Instruments
+                - img [ref=e2706]
+              - generic [ref=e2709] [cursor=pointer]:
+                - generic [ref=e2710]:
+                  - generic [ref=e2711]: "08"
+                  - generic [ref=e2712]: Construction Machinery
+                - img [ref=e2713]
+              - generic [ref=e2716] [cursor=pointer]:
+                - generic [ref=e2717]:
+                  - generic [ref=e2718]: "09"
+                  - generic [ref=e2719]: Hotel Supplies
+                - img [ref=e2720]
+              - generic [ref=e2723] [cursor=pointer]:
+                - generic [ref=e2724]:
+                  - generic [ref=e2725]: "10"
+                  - generic [ref=e2726]: Water Industry
+                - img [ref=e2727]
+              - generic [ref=e2730] [cursor=pointer]:
+                - generic [ref=e2731]:
+                  - generic [ref=e2732]: "11"
+                  - generic [ref=e2733]: Electronic Components
+                - img [ref=e2734]
+              - generic [ref=e2737] [cursor=pointer]:
+                - generic [ref=e2738]:
+                  - generic [ref=e2739]: "12"
+                  - generic [ref=e2740]: Packaging Equipment
+                - img [ref=e2741]
+            - generic [ref=e2744]:
+              - generic [ref=e2745]:
+                - heading "AI Vision Inspection" [level=3] [ref=e2746]
+                - paragraph [ref=e2747]: 5 subcategories · Verified suppliers · Full technical support
+              - generic [ref=e2748]:
+                - generic [ref=e2749]:
+                  - generic [ref=e2750]:
+                    - heading "2D Vision Inspection" [level=4] [ref=e2752]
+                    - generic [ref=e2753]: 5 Products
+                  - generic [ref=e2754]:
+                    - generic [ref=e2755] [cursor=pointer]: Surface Defect Detection
+                    - generic [ref=e2756]: "|"
+                    - generic [ref=e2757] [cursor=pointer]: Dimensional Measurement
+                    - generic [ref=e2758]: "|"
+                    - generic [ref=e2759] [cursor=pointer]: OCR Character Recognition
+                    - generic [ref=e2760]: "|"
+                    - generic [ref=e2761] [cursor=pointer]: Barcode Scanning
+                    - generic [ref=e2762]: "|"
+                    - generic [ref=e2763] [cursor=pointer]: Surface Quality Inspection
+                - generic [ref=e2764]:
+                  - generic [ref=e2765]:
+                    - heading "3D Vision Inspection" [level=4] [ref=e2767]
+                    - generic [ref=e2768]: 5 Products
+                  - generic [ref=e2769]:
+                    - generic [ref=e2770] [cursor=pointer]: Laser Triangulation
+                    - generic [ref=e2771]: "|"
+                    - generic [ref=e2772] [cursor=pointer]: Structured Light Scanning
+                    - generic [ref=e2773]: "|"
+                    - generic [ref=e2774] [cursor=pointer]: Time-of-Flight (ToF)
+                    - generic [ref=e2775]: "|"
+                    - generic [ref=e2776] [cursor=pointer]: Stereo Vision
+                    - generic [ref=e2777]: "|"
+                    - generic [ref=e2778] [cursor=pointer]: Line Laser Profilometry
+                - generic [ref=e2779]:
+                  - generic [ref=e2780]:
+                    - heading "Intelligent Sorting" [level=4] [ref=e2782]
+                    - generic [ref=e2783]: 5 Products
+                  - generic [ref=e2784]:
+                    - generic [ref=e2785] [cursor=pointer]: Vision-Guided Sorting
+                    - generic [ref=e2786]: "|"
+                    - generic [ref=e2787] [cursor=pointer]: Delta Parallel Robots
+                    - generic [ref=e2788]: "|"
+                    - generic [ref=e2789] [cursor=pointer]: Color Recognition Sorting
+                    - generic [ref=e2790]: "|"
+                    - generic [ref=e2791] [cursor=pointer]: Shape Recognition Sorting
+                    - generic [ref=e2792]: "|"
+                    - generic [ref=e2793] [cursor=pointer]: Mixed Material Sorting
+                - generic [ref=e2794]:
+                  - generic [ref=e2795]:
+                    - heading "AI Deep Learning" [level=4] [ref=e2797]
+                    - generic [ref=e2798]: 5 Products
+                  - generic [ref=e2799]:
+                    - generic [ref=e2800] [cursor=pointer]: Defect Recognition Algo
+                    - generic [ref=e2801]: "|"
+                    - generic [ref=e2802] [cursor=pointer]: Object Detection Systems
+                    - generic [ref=e2803]: "|"
+                    - generic [ref=e2804] [cursor=pointer]: Image Classification
+                    - generic [ref=e2805]: "|"
+                    - generic [ref=e2806] [cursor=pointer]: Semantic Segmentation
+                    - generic [ref=e2807]: "|"
+                    - generic [ref=e2808] [cursor=pointer]: Instance Segmentation
+                - generic [ref=e2809]:
+                  - generic [ref=e2810]:
+                    - heading "Inline Inspection" [level=4] [ref=e2812]
+                    - generic [ref=e2813]: 5 Products
+                  - generic [ref=e2814]:
+                    - generic [ref=e2815] [cursor=pointer]: High-Speed Inspection
+                    - generic [ref=e2816]: "|"
+                    - generic [ref=e2817] [cursor=pointer]: Continuous Line Inspection
+                    - generic [ref=e2818]: "|"
+                    - generic [ref=e2819] [cursor=pointer]: Real-Time Quality Monitor
+                    - generic [ref=e2820]: "|"
+                    - generic [ref=e2821] [cursor=pointer]: Data Traceability
+                    - generic [ref=e2822]: "|"
+                    - generic [ref=e2823] [cursor=pointer]: MES Integration
+        - generic [ref=e2825]:
+          - generic [ref=e2826]:
+            - heading "Featured Products" [level=2] [ref=e2827]: Featured Products
+            - paragraph [ref=e2829]: Prices are for reference only, please contact suppliers for actual pricing
+          - button "View More" [ref=e2830]:
+            - text: View More
+            - img [ref=e2831]
+        - generic [ref=e2859]:
+          - heading "Verified Suppliers" [level=2] [ref=e2860]: Verified Suppliers
+          - button "More Suppliers" [ref=e2862]:
+            - text: More Suppliers
+            - img [ref=e2863]
+        - generic [ref=e2878]:
+          - generic [ref=e2879]:
+            - heading "Latest Procurement" [level=2] [ref=e2880]: Latest Procurement
+            - button "View All" [ref=e2882]:
+              - text: View All
+              - img [ref=e2883]
+          - generic [ref=e2886]: No procurement listings
+      - button "打开AI助手" [ref=e2887]:
+        - img [ref=e2889]
+  - contentinfo [ref=e2478]:
+    - generic [ref=e2479]:
+      - generic [ref=e2480]:
+        - generic [ref=e2481]:
+          - heading "DongShiDi" [level=3] [ref=e2482]
+          - paragraph [ref=e2483]: Your premier global platform for AI vision inspection equipment. We connect international buyers with top-tier manufacturers for leasing, purchasing, and technical consulting.
+          - generic [ref=e2484]:
+            - img [ref=e2485]
+            - generic [ref=e2488]: Global Shipping Available
+        - generic [ref=e2489]:
+          - heading "Company" [level=4] [ref=e2490]
+          - list [ref=e2491]:
+            - listitem [ref=e2492]:
+              - link "About Us" [ref=e2493] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e2494]:
+              - link "Global Partners" [ref=e2495] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e2496]:
+              - link "Terms of Service" [ref=e2497] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e2498]:
+              - link "Privacy Policy" [ref=e2499] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e2500]:
+          - heading "Support" [level=4] [ref=e2501]
+          - list [ref=e2502]:
+            - listitem [ref=e2503]:
+              - link "Help Center" [ref=e2504] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e2505]:
+              - link "Submit a Ticket" [ref=e2506] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e2507]:
+              - link "Sourcing Request" [ref=e2508] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e2509]:
+              - link "Supplier Verification" [ref=e2510] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e2511]:
+          - heading "Contact Us" [level=4] [ref=e2512]
+          - list [ref=e2513]:
+            - listitem [ref=e2514]:
+              - img [ref=e2515]
+              - generic [ref=e2518]:
+                - generic [ref=e2519]: Email Support
+                - text: 2478686497@qq.com
+            - listitem [ref=e2520]:
+              - img [ref=e2521]
+              - generic [ref=e2524]:
+                - generic [ref=e2525]: Business Email
+                - text: 2696432359@qq.com
+          - generic [ref=e2526]:
+            - link [ref=e2527] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e2528]
+            - link [ref=e2530] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e2531]
+            - link [ref=e2533] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e2534]
+      - generic [ref=e2538]:
+        - paragraph [ref=e2539]: © 2025 DongShiDi Global. All rights reserved.
+        - generic [ref=e2540]:
+          - link "Sitemap" [ref=e2541] [cursor=pointer]:
+            - /url: "#"
+          - link "Cookies" [ref=e2542] [cursor=pointer]:
+            - /url: "#"
+          - link "Accessibility" [ref=e2543] [cursor=pointer]:
+            - /url: "#"

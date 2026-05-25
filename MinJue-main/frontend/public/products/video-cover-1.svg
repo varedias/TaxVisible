@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340" viewBox="0 0 600 340">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a5f"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect fill="url(#bg1)" width="600" height="340"/>
+  <!-- 工业相机示意 -->
+  <rect fill="#334155" x="180" y="80" width="240" height="160" rx="8"/>
+  <rect fill="#1e293b" x="200" y="100" width="200" height="120" rx="4"/>
+  <circle fill="#475569" cx="300" cy="160" r="45"/>
+  <circle fill="#64748b" cx="300" cy="160" r="35"/>
+  <circle fill="#94a3b8" cx="300" cy="160" r="20"/>
+  <circle fill="#cbd5e1" cx="300" cy="160" r="8"/>
+  <!-- 镜头反光 -->
+  <ellipse fill="#e2e8f0" opacity="0.3" cx="290" cy="150" rx="10" ry="6"/>
+  <!-- 相机支架 -->
+  <rect fill="#475569" x="285" y="240" width="30" height="60"/>
+  <rect fill="#64748b" x="260" y="290" width="80" height="15" rx="3"/>
+  <!-- 播放按钮 -->
+  <circle fill="rgba(59,130,246,0.9)" cx="300" cy="160" r="25"/>
+  <polygon fill="white" points="293,148 293,172 313,160"/>
+  <!-- 标题文字 -->
+  <text fill="#e2e8f0" font-family="Arial, sans-serif" font-size="16" font-weight="bold" x="300" y="330" text-anchor="middle">工业相机深度测评</text>
+</svg>

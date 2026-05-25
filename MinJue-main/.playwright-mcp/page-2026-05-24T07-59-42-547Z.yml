@@ -1,0 +1,470 @@
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - link "登录" [ref=e7] [cursor=pointer]:
+        - /url: "#/login"
+        - img [ref=e8]
+        - text: 登录
+      - generic [ref=e11]: "|"
+      - link "免费注册" [ref=e12] [cursor=pointer]:
+        - /url: "#/register"
+        - img [ref=e13]
+        - text: 免费注册
+      - generic [ref=e16]: "|"
+      - button "免费开店" [ref=e17]:
+        - img [ref=e18]
+        - text: 免费开店
+      - generic [ref=e22]: "|"
+      - link "跨境服务" [ref=e23] [cursor=pointer]:
+        - /url: "#/en"
+        - img [ref=e24]
+        - text: 跨境服务
+    - generic [ref=e27]:
+      - link "帮助中心" [ref=e28] [cursor=pointer]:
+        - /url: "#/help"
+      - link "联系客服" [ref=e29] [cursor=pointer]:
+        - /url: "#/contact"
+  - banner [ref=e30]:
+    - generic [ref=e31]:
+      - generic [ref=e33]: 懂视帝
+      - generic [ref=e34]:
+        - textbox "搜索商品、内容..." [ref=e35]
+        - button [ref=e36]:
+          - img [ref=e37]
+      - navigation [ref=e40]:
+        - link "首页" [ref=e41] [cursor=pointer]:
+          - /url: "#/"
+        - link "发现" [ref=e42] [cursor=pointer]:
+          - /url: "#/discovery"
+        - link "租赁" [ref=e43] [cursor=pointer]:
+          - /url: "#/leasing"
+        - link "商城" [ref=e44] [cursor=pointer]:
+          - /url: "#/mall"
+        - button "个人中心" [ref=e45]
+        - button "账号设置" [ref=e46]
+  - main [ref=e47]:
+    - generic [ref=e49]:
+      - generic [ref=e51]:
+        - generic [ref=e52]:
+          - button "全部" [ref=e53]:
+            - img [ref=e54]
+            - text: 全部
+          - button "设备测评" [ref=e59]:
+            - img [ref=e60]
+            - text: 设备测评
+          - button "实拍Vlog" [ref=e63]:
+            - img [ref=e64]
+            - text: 实拍Vlog
+          - button "使用教程" [ref=e67]:
+            - img [ref=e68]
+            - text: 使用教程
+          - button "设备买卖" [ref=e70]:
+            - img [ref=e71]
+            - text: 设备买卖
+          - button "行业分析" [ref=e75]:
+            - img [ref=e76]
+            - text: 行业分析
+        - generic [ref=e78]:
+          - generic [ref=e79]: "排序:"
+          - button "综合排序" [ref=e80]
+          - button "最新发布" [ref=e81]
+          - button "最多播放" [ref=e82]
+          - button "最多点赞" [ref=e83]
+      - generic [ref=e84]: 共 23 条内容，当前展示 12 条
+      - generic [ref=e85]:
+        - generic [ref=e86] [cursor=pointer]:
+          - generic [ref=e87]:
+            - img "基于视觉的智能分拣机市场——全球预测2026-2032" [ref=e88]
+            - generic [ref=e89]:
+              - img [ref=e90]
+              - text: 深度解读
+          - generic [ref=e93]:
+            - heading "基于视觉的智能分拣机市场——全球预测2026-2032" [level=3] [ref=e94]
+            - generic [ref=e95]:
+              - img "民崛研究院" [ref=e96]
+              - generic [ref=e97]: 民崛研究院
+            - generic [ref=e99]:
+              - generic [ref=e100]:
+                - img [ref=e101]
+                - text: 52.8万
+              - generic [ref=e104]:
+                - img [ref=e105]
+                - text: "16800"
+              - generic [ref=e107]:
+                - img [ref=e108]
+                - text: "326"
+            - generic [ref=e110]:
+              - generic [ref=e111]: 智能分拣
+              - generic [ref=e112]: 市场预测
+              - generic [ref=e113]: 采购策略
+            - generic [ref=e114]:
+              - generic [ref=e115]:
+                - img [ref=e116]
+                - text: 今日精选
+              - generic [ref=e119]: 8分钟阅读
+        - generic [ref=e120] [cursor=pointer]:
+          - generic [ref=e121]:
+            - img "民崛智能分拣现场实拍：高速识别与自动分流演示" [ref=e122]
+            - generic [ref=e123]: 01:31
+            - generic [ref=e124]:
+              - img [ref=e125]
+              - text: "5"
+          - generic [ref=e127]:
+            - heading "民崛智能分拣现场实拍：高速识别与自动分流演示" [level=3] [ref=e128]
+            - generic [ref=e129]:
+              - img "民崛智能" [ref=e130]
+              - generic [ref=e131]: 民崛智能
+            - generic [ref=e133]:
+              - generic [ref=e134]:
+                - img [ref=e135]
+                - text: 48.6万
+              - generic [ref=e138]:
+                - img [ref=e139]
+                - text: "14200"
+              - generic [ref=e141]:
+                - img [ref=e142]
+                - text: "618"
+            - generic [ref=e144]:
+              - generic [ref=e145]: 智能分拣
+              - generic [ref=e146]: 产线实拍
+              - generic [ref=e147]: 自动分流
+            - generic [ref=e149]:
+              - img [ref=e150]
+              - text: 刚刚
+        - generic [ref=e153] [cursor=pointer]:
+          - generic [ref=e154]:
+            - img "民崛智能方案纪实：复杂来料下的视觉分拣稳定性验证" [ref=e155]
+            - generic [ref=e156]: 00:31
+            - generic [ref=e157]:
+              - img [ref=e158]
+              - text: "4.9"
+          - generic [ref=e160]:
+            - heading "民崛智能方案纪实：复杂来料下的视觉分拣稳定性验证" [level=3] [ref=e161]
+            - generic [ref=e162]:
+              - img "民崛智能" [ref=e163]
+              - generic [ref=e164]: 民崛智能
+            - generic [ref=e166]:
+              - generic [ref=e167]:
+                - img [ref=e168]
+                - text: 42.8万
+              - generic [ref=e171]:
+                - img [ref=e172]
+                - text: "13100"
+              - generic [ref=e174]:
+                - img [ref=e175]
+                - text: "472"
+            - generic [ref=e177]:
+              - generic [ref=e178]: 复杂来料
+              - generic [ref=e179]: 稳定性验证
+              - generic [ref=e180]: 视觉分拣
+            - generic [ref=e182]:
+              - img [ref=e183]
+              - text: 刚刚
+        - generic [ref=e186] [cursor=pointer]:
+          - generic [ref=e187]:
+            - img "Halcon机器视觉完整教程 | 从入门到精通(1/50)" [ref=e188]
+            - generic [ref=e189]: 45:30
+            - generic [ref=e190]:
+              - img [ref=e191]
+              - text: "4.9"
+          - generic [ref=e193]:
+            - heading "Halcon机器视觉完整教程 | 从入门到精通(1/50)" [level=3] [ref=e194]
+            - generic [ref=e195]:
+              - img "视觉教程大师" [ref=e196]
+              - generic [ref=e197]: 视觉教程大师
+            - generic [ref=e199]:
+              - generic [ref=e200]:
+                - img [ref=e201]
+                - text: 56.7万
+              - generic [ref=e204]:
+                - img [ref=e205]
+                - text: "15600"
+              - generic [ref=e207]:
+                - img [ref=e208]
+                - text: "1234"
+            - generic [ref=e210]:
+              - generic [ref=e211]: Halcon
+              - generic [ref=e212]: 教程
+              - generic [ref=e213]: 入门
+            - generic [ref=e215]:
+              - img [ref=e216]
+              - text: 1个月前
+        - generic [ref=e219] [cursor=pointer]:
+          - generic [ref=e220]:
+            - img "2024机器视觉行业白皮书解读 | 市场规模突破500亿" [ref=e221]
+            - generic [ref=e222]: 35:20
+            - generic [ref=e223]:
+              - img [ref=e224]
+              - text: "4.9"
+          - generic [ref=e226]:
+            - heading "2024机器视觉行业白皮书解读 | 市场规模突破500亿" [level=3] [ref=e227]
+            - generic [ref=e228]:
+              - img "行业分析师" [ref=e229]
+              - generic [ref=e230]: 行业分析师
+            - generic [ref=e232]:
+              - generic [ref=e233]:
+                - img [ref=e234]
+                - text: 45.6万
+              - generic [ref=e237]:
+                - img [ref=e238]
+                - text: "12300"
+              - generic [ref=e240]:
+                - img [ref=e241]
+                - text: "1234"
+            - generic [ref=e243]:
+              - generic [ref=e244]: 行业报告
+              - generic [ref=e245]: 市场分析
+              - generic [ref=e246]: 趋势
+            - generic [ref=e248]:
+              - img [ref=e249]
+              - text: 1周前
+        - generic [ref=e252] [cursor=pointer]:
+          - generic [ref=e253]:
+            - img "新能源行业带来的视觉检测机遇 | 千亿市场解析" [ref=e254]
+            - generic [ref=e255]: 26:30
+            - generic [ref=e256]:
+              - img [ref=e257]
+              - text: "4.9"
+          - generic [ref=e259]:
+            - heading "新能源行业带来的视觉检测机遇 | 千亿市场解析" [level=3] [ref=e260]
+            - generic [ref=e261]:
+              - img "投资观察" [ref=e262]
+              - generic [ref=e263]: 投资观察
+            - generic [ref=e265]:
+              - generic [ref=e266]:
+                - img [ref=e267]
+                - text: 34.5万
+              - generic [ref=e270]:
+                - img [ref=e271]
+                - text: "9870"
+              - generic [ref=e273]:
+                - img [ref=e274]
+                - text: "1045"
+            - generic [ref=e276]:
+              - generic [ref=e277]: 新能源
+              - generic [ref=e278]: 市场机遇
+              - generic [ref=e279]: 投资
+            - generic [ref=e281]:
+              - img [ref=e282]
+              - text: 2天前
+        - generic [ref=e285] [cursor=pointer]:
+          - generic [ref=e286]:
+            - img "二手设备淘宝记 | 5万元收购一套完整视觉检测系统" [ref=e287]
+            - generic [ref=e288]: 22:15
+            - generic [ref=e289]:
+              - img [ref=e290]
+              - text: "4.8"
+          - generic [ref=e292]:
+            - heading "二手设备淘宝记 | 5万元收购一套完整视觉检测系统" [level=3] [ref=e293]
+            - generic [ref=e294]:
+              - img "设备猎人" [ref=e295]
+              - generic [ref=e296]: 设备猎人
+            - generic [ref=e298]:
+              - generic [ref=e299]:
+                - img [ref=e300]
+                - text: 34.5万
+              - generic [ref=e303]:
+                - img [ref=e304]
+                - text: "8900"
+              - generic [ref=e306]:
+                - img [ref=e307]
+                - text: "789"
+            - generic [ref=e309]:
+              - generic [ref=e310]: 二手设备
+              - generic [ref=e311]: 收购
+              - generic [ref=e312]: 性价比
+            - generic [ref=e314]:
+              - img [ref=e315]
+              - text: 3天前
+        - generic [ref=e318] [cursor=pointer]:
+          - generic [ref=e319]:
+            - img "AI视觉检测技术发展趋势 | 深度学习vs传统算法" [ref=e320]
+            - generic [ref=e321]: 28:15
+            - generic [ref=e322]:
+              - img [ref=e323]
+              - text: "4.8"
+          - generic [ref=e325]:
+            - heading "AI视觉检测技术发展趋势 | 深度学习vs传统算法" [level=3] [ref=e326]
+            - generic [ref=e327]:
+              - img "技术前沿" [ref=e328]
+              - generic [ref=e329]: 技术前沿
+            - generic [ref=e331]:
+              - generic [ref=e332]:
+                - img [ref=e333]
+                - text: 28.9万
+              - generic [ref=e336]:
+                - img [ref=e337]
+                - text: "8900"
+              - generic [ref=e339]:
+                - img [ref=e340]
+                - text: "892"
+            - generic [ref=e342]:
+              - generic [ref=e343]: AI
+              - generic [ref=e344]: 技术趋势
+              - generic [ref=e345]: 深度学习
+            - generic [ref=e347]:
+              - img [ref=e348]
+              - text: 3天前
+        - generic [ref=e351] [cursor=pointer]:
+          - generic [ref=e352]:
+            - img "如何避坑 | 购买工业相机的10个注意事项" [ref=e353]
+            - generic [ref=e354]: 18:45
+            - generic [ref=e355]:
+              - img [ref=e356]
+              - text: "4.9"
+          - generic [ref=e358]:
+            - heading "如何避坑 | 购买工业相机的10个注意事项" [level=3] [ref=e359]
+            - generic [ref=e360]:
+              - img "采购老司机" [ref=e361]
+              - generic [ref=e362]: 采购老司机
+            - generic [ref=e364]:
+              - generic [ref=e365]:
+                - img [ref=e366]
+                - text: 26.7万
+              - generic [ref=e369]:
+                - img [ref=e370]
+                - text: "7650"
+              - generic [ref=e372]:
+                - img [ref=e373]
+                - text: "567"
+            - generic [ref=e375]:
+              - generic [ref=e376]: 避坑指南
+              - generic [ref=e377]: 采购
+              - generic [ref=e378]: 工业相机
+            - generic [ref=e380]:
+              - img [ref=e381]
+              - text: 1周前
+        - generic [ref=e384] [cursor=pointer]:
+          - generic [ref=e385]:
+            - img "工业相机选型与调试实战教程 | 手把手教学" [ref=e386]
+            - generic [ref=e387]: 38:12
+            - generic [ref=e388]:
+              - img [ref=e389]
+              - text: "4.8"
+          - generic [ref=e391]:
+            - heading "工业相机选型与调试实战教程 | 手把手教学" [level=3] [ref=e392]
+            - generic [ref=e393]:
+              - img "工程师小李" [ref=e394]
+              - generic [ref=e395]: 工程师小李
+            - generic [ref=e397]:
+              - generic [ref=e398]:
+                - img [ref=e399]
+                - text: 23.4万
+              - generic [ref=e402]:
+                - img [ref=e403]
+                - text: "7890"
+              - generic [ref=e405]:
+                - img [ref=e406]
+                - text: "678"
+            - generic [ref=e408]:
+              - generic [ref=e409]: 工业相机
+              - generic [ref=e410]: 选型
+              - generic [ref=e411]: 调试
+            - generic [ref=e413]:
+              - img [ref=e414]
+              - text: 2周前
+        - generic [ref=e417] [cursor=pointer]:
+          - generic [ref=e418]:
+            - img "探厂实拍 | 走进深圳AI视觉检测设备制造商" [ref=e419]
+            - generic [ref=e420]: 28:34
+            - generic [ref=e421]:
+              - img [ref=e422]
+              - text: "4.9"
+          - generic [ref=e424]:
+            - heading "探厂实拍 | 走进深圳AI视觉检测设备制造商" [level=3] [ref=e425]
+            - generic [ref=e426]:
+              - img "工业探厂Vlog" [ref=e427]
+              - generic [ref=e428]: 工业探厂Vlog
+            - generic [ref=e430]:
+              - generic [ref=e431]:
+                - img [ref=e432]
+                - text: 23.4万
+              - generic [ref=e435]:
+                - img [ref=e436]
+                - text: "6780"
+              - generic [ref=e438]:
+                - img [ref=e439]
+                - text: "567"
+            - generic [ref=e441]:
+              - generic [ref=e442]: 探厂
+              - generic [ref=e443]: 深圳
+              - generic [ref=e444]: AI检测
+            - generic [ref=e446]:
+              - img [ref=e447]
+              - text: 2天前
+        - generic [ref=e450] [cursor=pointer]:
+          - generic [ref=e451]:
+            - img "国产vs进口 | 机器视觉设备竞争格局分析" [ref=e452]
+            - generic [ref=e453]: 32:50
+            - generic [ref=e454]:
+              - img [ref=e455]
+              - text: "4.7"
+          - generic [ref=e457]:
+            - heading "国产vs进口 | 机器视觉设备竞争格局分析" [level=3] [ref=e458]
+            - generic [ref=e459]:
+              - img "产业观察" [ref=e460]
+              - generic [ref=e461]: 产业观察
+            - generic [ref=e463]:
+              - generic [ref=e464]:
+                - img [ref=e465]
+                - text: 23.4万
+              - generic [ref=e468]:
+                - img [ref=e469]
+                - text: "6780"
+              - generic [ref=e471]:
+                - img [ref=e472]
+                - text: "678"
+            - generic [ref=e474]:
+              - generic [ref=e475]: 国产化
+              - generic [ref=e476]: 进口替代
+              - generic [ref=e477]: 竞争分析
+            - generic [ref=e479]:
+              - img [ref=e480]
+              - text: 5天前
+      - button "加载更多内容" [ref=e484]
+  - contentinfo [ref=e485]:
+    - generic [ref=e486]:
+      - generic [ref=e487]:
+        - generic [ref=e488]:
+          - heading "懂视帝" [level=3] [ref=e489]
+          - paragraph [ref=e490]: 专注于AI视觉检测设备领域的专业服务平台，为您提供最优质的设备租赁、买卖及技术咨询服务。
+        - generic [ref=e491]:
+          - heading "快速链接" [level=4] [ref=e492]
+          - list [ref=e493]:
+            - listitem [ref=e494]:
+              - link "关于我们" [ref=e495] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e496]:
+              - link "服务条款" [ref=e497] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e498]:
+              - link "隐私政策" [ref=e499] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e500]:
+              - link "帮助中心" [ref=e501] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e502]:
+          - heading "联系我们" [level=4] [ref=e503]
+          - list [ref=e504]:
+            - listitem [ref=e505]:
+              - img [ref=e506]
+              - generic [ref=e509]: 2478686497@qq.com
+            - listitem [ref=e510]:
+              - img [ref=e511]
+              - generic [ref=e514]: 2696432359@qq.com
+        - generic [ref=e515]:
+          - heading "关注我们" [level=4] [ref=e516]
+          - generic [ref=e517]:
+            - link [ref=e518] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e519]
+            - link [ref=e521] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e522]
+            - link [ref=e524] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e525]
+          - generic [ref=e529]:
+            - heading "意见反馈" [level=5] [ref=e530]
+            - button "提交反馈" [ref=e531]
+      - paragraph [ref=e533]: © 2025 懂视帝. All rights reserved.

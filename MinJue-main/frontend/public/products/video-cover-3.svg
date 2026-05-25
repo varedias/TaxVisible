@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340" viewBox="0 0 600 340">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#065f46"/>
+      <stop offset="100%" style="stop-color:#064e3b"/>
+    </linearGradient>
+  </defs>
+  <rect fill="url(#bg3)" width="600" height="340"/>
+  <!-- 3D视觉传感器 -->
+  <rect fill="#047857" x="150" y="70" width="140" height="100" rx="8"/>
+  <rect fill="#059669" x="160" y="80" width="120" height="80" rx="4"/>
+  <!-- 激光线 -->
+  <line stroke="#34d399" stroke-width="3" x1="200" y1="120" x2="400" y2="80"/>
+  <line stroke="#34d399" stroke-width="3" x1="200" y1="120" x2="400" y2="120"/>
+  <line stroke="#34d399" stroke-width="3" x1="200" y1="120" x2="400" y2="160"/>
+  <!-- 被测物体 -->
+  <rect fill="#10b981" x="380" y="70" width="100" height="100" rx="4"/>
+  <rect fill="#34d399" x="390" y="80" width="80" height="30"/>
+  <rect fill="#6ee7b7" x="390" y="115" width="80" height="20"/>
+  <rect fill="#a7f3d0" x="390" y="140" width="80" height="20"/>
+  <!-- 点云数据 -->
+  <circle fill="#6ee7b7" cx="420" cy="220" r="3"/>
+  <circle fill="#6ee7b7" cx="440" cy="215" r="3"/>
+  <circle fill="#6ee7b7" cx="460" cy="225" r="3"/>
+  <circle fill="#6ee7b7" cx="430" cy="235" r="3"/>
+  <circle fill="#6ee7b7" cx="450" cy="240" r="3"/>
+  <circle fill="#6ee7b7" cx="410" cy="245" r="3"/>
+  <circle fill="#6ee7b7" cx="470" cy="235" r="3"/>
+  <circle fill="#6ee7b7" cx="425" cy="250" r="3"/>
+  <circle fill="#6ee7b7" cx="455" cy="255" r="3"/>
+  <!-- 数据面板 -->
+  <rect fill="#059669" x="120" y="200" width="150" height="80" rx="6"/>
+  <text fill="#d1fae5" font-family="Arial" font-size="10" x="130" y="220">Point Cloud: 1.2M</text>
+  <text fill="#d1fae5" font-family="Arial" font-size="10" x="130" y="240">Resolution: 0.02mm</text>
+  <text fill="#d1fae5" font-family="Arial" font-size="10" x="130" y="260">Scan Time: 0.8s</text>
+  <!-- 播放按钮 -->
+  <circle fill="rgba(255,255,255,0.95)" cx="300" cy="280" r="28"/>
+  <polygon fill="#059669" points="292,265 292,295 318,280"/>
+  <!-- 标题 -->
+  <text fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold" x="300" y="330" text-anchor="middle">3D视觉传感器对比评测</text>
+</svg>

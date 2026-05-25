@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340" viewBox="0 0 600 340">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0369a1"/>
+      <stop offset="100%" style="stop-color:#0c4a6e"/>
+    </linearGradient>
+  </defs>
+  <rect fill="url(#bg4)" width="600" height="340"/>
+  <!-- 文章文档示意 -->
+  <rect fill="white" x="180" y="40" width="240" height="260" rx="8"/>
+  <rect fill="#f0f9ff" x="195" y="55" width="210" height="230" rx="4"/>
+  <!-- 文章内容 -->
+  <rect fill="#0284c7" x="210" y="70" width="120" height="16" rx="2"/>
+  <rect fill="#7dd3fc" x="210" y="95" width="180" height="8" rx="2"/>
+  <rect fill="#7dd3fc" x="210" y="110" width="160" height="8" rx="2"/>
+  <rect fill="#7dd3fc" x="210" y="125" width="170" height="8" rx="2"/>
+  <!-- 图片占位 -->
+  <rect fill="#bae6fd" x="210" y="145" width="180" height="60" rx="4"/>
+  <circle fill="#38bdf8" cx="260" cy="175" r="15"/>
+  <polygon fill="#0ea5e9" points="290,190 320,165 350,190"/>
+  <!-- 更多文字 -->
+  <rect fill="#7dd3fc" x="210" y="215" width="180" height="8" rx="2"/>
+  <rect fill="#7dd3fc" x="210" y="230" width="140" height="8" rx="2"/>
+  <rect fill="#7dd3fc" x="210" y="245" width="160" height="8" rx="2"/>
+  <rect fill="#7dd3fc" x="210" y="260" width="120" height="8" rx="2"/>
+  <!-- 文章图标 -->
+  <rect fill="#0284c7" x="60" y="120" width="80" height="100" rx="6"/>
+  <rect fill="white" x="70" y="135" width="60" height="6" rx="1"/>
+  <rect fill="#7dd3fc" x="70" y="150" width="50" height="4" rx="1"/>
+  <rect fill="#7dd3fc" x="70" y="160" width="55" height="4" rx="1"/>
+  <rect fill="#7dd3fc" x="70" y="170" width="45" height="4" rx="1"/>
+  <rect fill="#7dd3fc" x="70" y="185" width="60" height="4" rx="1"/>
+  <rect fill="#7dd3fc" x="70" y="195" width="50" height="4" rx="1"/>
+  <!-- 标签 -->
+  <rect fill="#22d3ee" x="460" y="80" width="80" height="24" rx="12"/>
+  <text fill="white" font-family="Arial" font-size="11" x="500" y="97" text-anchor="middle">技术文章</text>
+  <!-- 标题 -->
+  <text fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold" x="300" y="325" text-anchor="middle">工业相机选型指南</text>
+</svg>

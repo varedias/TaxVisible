@@ -1,0 +1,79 @@
+server:
+  port: 8999
+
+spring:
+  application:
+    name: minjue-backend
+  profiles:
+    active: dev
+  
+  # Database Configuration
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/minjue_db?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+#    username: minjue_db
+    password: 123456
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      max-lifetime: 1800000
+      connection-timeout: 30000
+
+  # Redis Configuration
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+      timeout: 3000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-wait: -1ms
+          max-idle: 8
+          min-idle: 0
+
+  # QQ Email Configuration
+  mail:
+    host: smtp.qq.com
+    port: 587
+    username: 2478686497@qq.com
+    password: zogerchmspsgecea
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+# MyBatis Plus Configuration
+mybatis-plus:
+  mapper-locations: classpath*:mapper/**/*.xml
+  type-aliases-package: com.minjue.modules.*.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    call-setters-on-nulls: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# Knife4j / Swagger Configuration
+knife4j:
+  enable: true
+  setting:
+    language: zh-CN
+
+logging:
+  level:
+    com.minjue: debug
+    org.springframework: info
+
+# AI Configuration (智谱 GLM)
+ai:
+  zhipu:
+    api-key: e21edf29f04c47f084b39cd3fc6e1856.G75sS0L7KYfgbHfR
+    base-url: https://open.bigmodel.cn/api/paas/v4
+    model: glm-4-flash

@@ -1,0 +1,483 @@
+- generic [ref=e676]:
+  - banner [ref=e677]:
+    - generic [ref=e679]:
+      - link "DongShiDi Global" [ref=e681] [cursor=pointer]:
+        - /url: "#/en"
+        - generic [ref=e682]: DongShiDi
+        - generic [ref=e683]: Global
+      - navigation [ref=e684]:
+        - link "Home" [ref=e685] [cursor=pointer]:
+          - /url: "#/en"
+        - link "Discovery" [ref=e686] [cursor=pointer]:
+          - /url: "#/en/discovery"
+        - link "Leasing" [ref=e687] [cursor=pointer]:
+          - /url: "#/en/leasing"
+        - link "Marketplace" [ref=e688] [cursor=pointer]:
+          - /url: "#/en/mall"
+        - link "Suppliers" [ref=e689] [cursor=pointer]:
+          - /url: "#/en/suppliers"
+      - generic [ref=e690]:
+        - textbox "Search products, content..." [ref=e691]
+        - button [ref=e692]:
+          - img [ref=e693]
+      - generic [ref=e696]:
+        - link "CN" [ref=e697] [cursor=pointer]:
+          - /url: "#/"
+          - img [ref=e698]
+          - generic [ref=e701]: CN
+        - generic [ref=e703]:
+          - link "Sign In" [ref=e704] [cursor=pointer]:
+            - /url: "#/en/login"
+          - link "Join Free" [ref=e705] [cursor=pointer]:
+            - /url: "#/en/register"
+  - main [ref=e706]:
+    - generic [ref=e708]:
+      - generic [ref=e710]:
+        - generic [ref=e711]:
+          - button "All" [ref=e712]:
+            - img [ref=e713]
+            - text: All
+          - button "Reviews" [ref=e718]:
+            - img [ref=e719]
+            - text: Reviews
+          - button "Factory Tours" [ref=e722]:
+            - img [ref=e723]
+            - text: Factory Tours
+          - button "Tutorials" [ref=e726]:
+            - img [ref=e727]
+            - text: Tutorials
+          - button "Trading" [ref=e729]:
+            - img [ref=e730]
+            - text: Trading
+          - button "Analysis" [ref=e734]:
+            - img [ref=e735]
+            - text: Analysis
+        - generic [ref=e737]:
+          - generic [ref=e738]: "Sort:"
+          - button "Popular" [ref=e739]
+          - button "Latest" [ref=e740]
+          - button "Most Viewed" [ref=e741]
+          - button "Most Liked" [ref=e742]
+      - generic [ref=e743]: 12 of 23 items
+      - generic [ref=e744]:
+        - generic [ref=e745] [cursor=pointer]:
+          - generic [ref=e746]:
+            - img "基于视觉的智能分拣机市场——全球预测2026-2032" [ref=e747]
+            - generic [ref=e748]:
+              - img [ref=e749]
+              - text: Deep Dive
+          - generic [ref=e752]:
+            - heading "基于视觉的智能分拣机市场——全球预测2026-2032" [level=3] [ref=e753]
+            - generic [ref=e754]:
+              - img "民崛研究院" [ref=e755]
+              - generic [ref=e756]: 民崛研究院
+            - generic [ref=e758]:
+              - generic [ref=e759]:
+                - img [ref=e760]
+                - text: 528.0k
+              - generic [ref=e763]:
+                - img [ref=e764]
+                - text: "16800"
+              - generic [ref=e766]:
+                - img [ref=e767]
+                - text: "326"
+            - generic [ref=e769]:
+              - generic [ref=e770]: 智能分拣
+              - generic [ref=e771]: 市场预测
+              - generic [ref=e772]: 采购策略
+            - generic [ref=e773]:
+              - generic [ref=e774]:
+                - img [ref=e775]
+                - text: 今日精选
+              - generic [ref=e778]: 8分钟阅读
+        - generic [ref=e779] [cursor=pointer]:
+          - generic [ref=e780]:
+            - img "民崛智能分拣现场实拍：高速识别与自动分流演示" [ref=e781]
+            - generic [ref=e782]: 01:31
+            - generic [ref=e783]:
+              - img [ref=e784]
+              - text: "5"
+          - generic [ref=e786]:
+            - heading "民崛智能分拣现场实拍：高速识别与自动分流演示" [level=3] [ref=e787]
+            - generic [ref=e788]:
+              - img "民崛智能" [ref=e789]
+              - generic [ref=e790]: 民崛智能
+            - generic [ref=e792]:
+              - generic [ref=e793]:
+                - img [ref=e794]
+                - text: 486.0k
+              - generic [ref=e797]:
+                - img [ref=e798]
+                - text: "14200"
+              - generic [ref=e800]:
+                - img [ref=e801]
+                - text: "618"
+            - generic [ref=e803]:
+              - generic [ref=e804]: 智能分拣
+              - generic [ref=e805]: 产线实拍
+              - generic [ref=e806]: 自动分流
+            - generic [ref=e808]:
+              - img [ref=e809]
+              - text: 刚刚
+        - generic [ref=e812] [cursor=pointer]:
+          - generic [ref=e813]:
+            - img "民崛智能方案纪实：复杂来料下的视觉分拣稳定性验证" [ref=e814]
+            - generic [ref=e815]: 00:31
+            - generic [ref=e816]:
+              - img [ref=e817]
+              - text: "4.9"
+          - generic [ref=e819]:
+            - heading "民崛智能方案纪实：复杂来料下的视觉分拣稳定性验证" [level=3] [ref=e820]
+            - generic [ref=e821]:
+              - img "民崛智能" [ref=e822]
+              - generic [ref=e823]: 民崛智能
+            - generic [ref=e825]:
+              - generic [ref=e826]:
+                - img [ref=e827]
+                - text: 428.0k
+              - generic [ref=e830]:
+                - img [ref=e831]
+                - text: "13100"
+              - generic [ref=e833]:
+                - img [ref=e834]
+                - text: "472"
+            - generic [ref=e836]:
+              - generic [ref=e837]: 复杂来料
+              - generic [ref=e838]: 稳定性验证
+              - generic [ref=e839]: 视觉分拣
+            - generic [ref=e841]:
+              - img [ref=e842]
+              - text: 刚刚
+        - generic [ref=e845] [cursor=pointer]:
+          - generic [ref=e846]:
+            - img "Halcon机器视觉完整教程 | 从入门到精通(1/50)" [ref=e847]
+            - generic [ref=e848]: 45:30
+            - generic [ref=e849]:
+              - img [ref=e850]
+              - text: "4.9"
+          - generic [ref=e852]:
+            - heading "Halcon机器视觉完整教程 | 从入门到精通(1/50)" [level=3] [ref=e853]
+            - generic [ref=e854]:
+              - img "视觉教程大师" [ref=e855]
+              - generic [ref=e856]: 视觉教程大师
+            - generic [ref=e858]:
+              - generic [ref=e859]:
+                - img [ref=e860]
+                - text: 567.0k
+              - generic [ref=e863]:
+                - img [ref=e864]
+                - text: "15600"
+              - generic [ref=e866]:
+                - img [ref=e867]
+                - text: "1234"
+            - generic [ref=e869]:
+              - generic [ref=e870]: Halcon
+              - generic [ref=e871]: 教程
+              - generic [ref=e872]: 入门
+            - generic [ref=e874]:
+              - img [ref=e875]
+              - text: 1个月前
+        - generic [ref=e878] [cursor=pointer]:
+          - generic [ref=e879]:
+            - img "2024机器视觉行业白皮书解读 | 市场规模突破500亿" [ref=e880]
+            - generic [ref=e881]: 35:20
+            - generic [ref=e882]:
+              - img [ref=e883]
+              - text: "4.9"
+          - generic [ref=e885]:
+            - heading "2024机器视觉行业白皮书解读 | 市场规模突破500亿" [level=3] [ref=e886]
+            - generic [ref=e887]:
+              - img "行业分析师" [ref=e888]
+              - generic [ref=e889]: 行业分析师
+            - generic [ref=e891]:
+              - generic [ref=e892]:
+                - img [ref=e893]
+                - text: 456.0k
+              - generic [ref=e896]:
+                - img [ref=e897]
+                - text: "12300"
+              - generic [ref=e899]:
+                - img [ref=e900]
+                - text: "1234"
+            - generic [ref=e902]:
+              - generic [ref=e903]: 行业报告
+              - generic [ref=e904]: 市场分析
+              - generic [ref=e905]: 趋势
+            - generic [ref=e907]:
+              - img [ref=e908]
+              - text: 1周前
+        - generic [ref=e911] [cursor=pointer]:
+          - generic [ref=e912]:
+            - img "新能源行业带来的视觉检测机遇 | 千亿市场解析" [ref=e913]
+            - generic [ref=e914]: 26:30
+            - generic [ref=e915]:
+              - img [ref=e916]
+              - text: "4.9"
+          - generic [ref=e918]:
+            - heading "新能源行业带来的视觉检测机遇 | 千亿市场解析" [level=3] [ref=e919]
+            - generic [ref=e920]:
+              - img "投资观察" [ref=e921]
+              - generic [ref=e922]: 投资观察
+            - generic [ref=e924]:
+              - generic [ref=e925]:
+                - img [ref=e926]
+                - text: 345.0k
+              - generic [ref=e929]:
+                - img [ref=e930]
+                - text: "9870"
+              - generic [ref=e932]:
+                - img [ref=e933]
+                - text: "1045"
+            - generic [ref=e935]:
+              - generic [ref=e936]: 新能源
+              - generic [ref=e937]: 市场机遇
+              - generic [ref=e938]: 投资
+            - generic [ref=e940]:
+              - img [ref=e941]
+              - text: 2天前
+        - generic [ref=e944] [cursor=pointer]:
+          - generic [ref=e945]:
+            - img "二手设备淘宝记 | 5万元收购一套完整视觉检测系统" [ref=e946]
+            - generic [ref=e947]: 22:15
+            - generic [ref=e948]:
+              - img [ref=e949]
+              - text: "4.8"
+          - generic [ref=e951]:
+            - heading "二手设备淘宝记 | 5万元收购一套完整视觉检测系统" [level=3] [ref=e952]
+            - generic [ref=e953]:
+              - img "设备猎人" [ref=e954]
+              - generic [ref=e955]: 设备猎人
+            - generic [ref=e957]:
+              - generic [ref=e958]:
+                - img [ref=e959]
+                - text: 345.0k
+              - generic [ref=e962]:
+                - img [ref=e963]
+                - text: "8900"
+              - generic [ref=e965]:
+                - img [ref=e966]
+                - text: "789"
+            - generic [ref=e968]:
+              - generic [ref=e969]: 二手设备
+              - generic [ref=e970]: 收购
+              - generic [ref=e971]: 性价比
+            - generic [ref=e973]:
+              - img [ref=e974]
+              - text: 3天前
+        - generic [ref=e977] [cursor=pointer]:
+          - generic [ref=e978]:
+            - img "AI视觉检测技术发展趋势 | 深度学习vs传统算法" [ref=e979]
+            - generic [ref=e980]: 28:15
+            - generic [ref=e981]:
+              - img [ref=e982]
+              - text: "4.8"
+          - generic [ref=e984]:
+            - heading "AI视觉检测技术发展趋势 | 深度学习vs传统算法" [level=3] [ref=e985]
+            - generic [ref=e986]:
+              - img "技术前沿" [ref=e987]
+              - generic [ref=e988]: 技术前沿
+            - generic [ref=e990]:
+              - generic [ref=e991]:
+                - img [ref=e992]
+                - text: 289.0k
+              - generic [ref=e995]:
+                - img [ref=e996]
+                - text: "8900"
+              - generic [ref=e998]:
+                - img [ref=e999]
+                - text: "892"
+            - generic [ref=e1001]:
+              - generic [ref=e1002]: AI
+              - generic [ref=e1003]: 技术趋势
+              - generic [ref=e1004]: 深度学习
+            - generic [ref=e1006]:
+              - img [ref=e1007]
+              - text: 3天前
+        - generic [ref=e1010] [cursor=pointer]:
+          - generic [ref=e1011]:
+            - img "如何避坑 | 购买工业相机的10个注意事项" [ref=e1012]
+            - generic [ref=e1013]: 18:45
+            - generic [ref=e1014]:
+              - img [ref=e1015]
+              - text: "4.9"
+          - generic [ref=e1017]:
+            - heading "如何避坑 | 购买工业相机的10个注意事项" [level=3] [ref=e1018]
+            - generic [ref=e1019]:
+              - img "采购老司机" [ref=e1020]
+              - generic [ref=e1021]: 采购老司机
+            - generic [ref=e1023]:
+              - generic [ref=e1024]:
+                - img [ref=e1025]
+                - text: 267.0k
+              - generic [ref=e1028]:
+                - img [ref=e1029]
+                - text: "7650"
+              - generic [ref=e1031]:
+                - img [ref=e1032]
+                - text: "567"
+            - generic [ref=e1034]:
+              - generic [ref=e1035]: 避坑指南
+              - generic [ref=e1036]: 采购
+              - generic [ref=e1037]: 工业相机
+            - generic [ref=e1039]:
+              - img [ref=e1040]
+              - text: 1周前
+        - generic [ref=e1043] [cursor=pointer]:
+          - generic [ref=e1044]:
+            - img "工业相机选型与调试实战教程 | 手把手教学" [ref=e1045]
+            - generic [ref=e1046]: 38:12
+            - generic [ref=e1047]:
+              - img [ref=e1048]
+              - text: "4.8"
+          - generic [ref=e1050]:
+            - heading "工业相机选型与调试实战教程 | 手把手教学" [level=3] [ref=e1051]
+            - generic [ref=e1052]:
+              - img "工程师小李" [ref=e1053]
+              - generic [ref=e1054]: 工程师小李
+            - generic [ref=e1056]:
+              - generic [ref=e1057]:
+                - img [ref=e1058]
+                - text: 234.0k
+              - generic [ref=e1061]:
+                - img [ref=e1062]
+                - text: "7890"
+              - generic [ref=e1064]:
+                - img [ref=e1065]
+                - text: "678"
+            - generic [ref=e1067]:
+              - generic [ref=e1068]: 工业相机
+              - generic [ref=e1069]: 选型
+              - generic [ref=e1070]: 调试
+            - generic [ref=e1072]:
+              - img [ref=e1073]
+              - text: 2周前
+        - generic [ref=e1076] [cursor=pointer]:
+          - generic [ref=e1077]:
+            - img "探厂实拍 | 走进深圳AI视觉检测设备制造商" [ref=e1078]
+            - generic [ref=e1079]: 28:34
+            - generic [ref=e1080]:
+              - img [ref=e1081]
+              - text: "4.9"
+          - generic [ref=e1083]:
+            - heading "探厂实拍 | 走进深圳AI视觉检测设备制造商" [level=3] [ref=e1084]
+            - generic [ref=e1085]:
+              - img "工业探厂Vlog" [ref=e1086]
+              - generic [ref=e1087]: 工业探厂Vlog
+            - generic [ref=e1089]:
+              - generic [ref=e1090]:
+                - img [ref=e1091]
+                - text: 234.0k
+              - generic [ref=e1094]:
+                - img [ref=e1095]
+                - text: "6780"
+              - generic [ref=e1097]:
+                - img [ref=e1098]
+                - text: "567"
+            - generic [ref=e1100]:
+              - generic [ref=e1101]: 探厂
+              - generic [ref=e1102]: 深圳
+              - generic [ref=e1103]: AI检测
+            - generic [ref=e1105]:
+              - img [ref=e1106]
+              - text: 2天前
+        - generic [ref=e1109] [cursor=pointer]:
+          - generic [ref=e1110]:
+            - img "国产vs进口 | 机器视觉设备竞争格局分析" [ref=e1111]
+            - generic [ref=e1112]: 32:50
+            - generic [ref=e1113]:
+              - img [ref=e1114]
+              - text: "4.7"
+          - generic [ref=e1116]:
+            - heading "国产vs进口 | 机器视觉设备竞争格局分析" [level=3] [ref=e1117]
+            - generic [ref=e1118]:
+              - img "产业观察" [ref=e1119]
+              - generic [ref=e1120]: 产业观察
+            - generic [ref=e1122]:
+              - generic [ref=e1123]:
+                - img [ref=e1124]
+                - text: 234.0k
+              - generic [ref=e1127]:
+                - img [ref=e1128]
+                - text: "6780"
+              - generic [ref=e1130]:
+                - img [ref=e1131]
+                - text: "678"
+            - generic [ref=e1133]:
+              - generic [ref=e1134]: 国产化
+              - generic [ref=e1135]: 进口替代
+              - generic [ref=e1136]: 竞争分析
+            - generic [ref=e1138]:
+              - img [ref=e1139]
+              - text: 5天前
+      - button "Load More" [ref=e1143]
+  - contentinfo [ref=e1144]:
+    - generic [ref=e1145]:
+      - generic [ref=e1146]:
+        - generic [ref=e1147]:
+          - heading "DongShiDi" [level=3] [ref=e1148]
+          - paragraph [ref=e1149]: Your premier global platform for AI vision inspection equipment. We connect international buyers with top-tier manufacturers for leasing, purchasing, and technical consulting.
+          - generic [ref=e1150]:
+            - img [ref=e1151]
+            - generic [ref=e1154]: Global Shipping Available
+        - generic [ref=e1155]:
+          - heading "Company" [level=4] [ref=e1156]
+          - list [ref=e1157]:
+            - listitem [ref=e1158]:
+              - link "About Us" [ref=e1159] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e1160]:
+              - link "Global Partners" [ref=e1161] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e1162]:
+              - link "Terms of Service" [ref=e1163] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e1164]:
+              - link "Privacy Policy" [ref=e1165] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e1166]:
+          - heading "Support" [level=4] [ref=e1167]
+          - list [ref=e1168]:
+            - listitem [ref=e1169]:
+              - link "Help Center" [ref=e1170] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e1171]:
+              - link "Submit a Ticket" [ref=e1172] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e1173]:
+              - link "Sourcing Request" [ref=e1174] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e1175]:
+              - link "Supplier Verification" [ref=e1176] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e1177]:
+          - heading "Contact Us" [level=4] [ref=e1178]
+          - list [ref=e1179]:
+            - listitem [ref=e1180]:
+              - img [ref=e1181]
+              - generic [ref=e1184]:
+                - generic [ref=e1185]: Email Support
+                - text: 2478686497@qq.com
+            - listitem [ref=e1186]:
+              - img [ref=e1187]
+              - generic [ref=e1190]:
+                - generic [ref=e1191]: Business Email
+                - text: 2696432359@qq.com
+          - generic [ref=e1192]:
+            - link [ref=e1193] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e1194]
+            - link [ref=e1196] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e1197]
+            - link [ref=e1199] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e1200]
+      - generic [ref=e1204]:
+        - paragraph [ref=e1205]: © 2025 DongShiDi Global. All rights reserved.
+        - generic [ref=e1206]:
+          - link "Sitemap" [ref=e1207] [cursor=pointer]:
+            - /url: "#"
+          - link "Cookies" [ref=e1208] [cursor=pointer]:
+            - /url: "#"
+          - link "Accessibility" [ref=e1209] [cursor=pointer]:
+            - /url: "#"

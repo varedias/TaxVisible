@@ -1,0 +1,152 @@
+- generic [ref=e450]:
+  - banner [ref=e451]:
+    - generic [ref=e453]:
+      - link "DongShiDi Global" [ref=e455] [cursor=pointer]:
+        - /url: "#/en"
+        - generic [ref=e456]: DongShiDi
+        - generic [ref=e457]: Global
+      - navigation [ref=e458]:
+        - link "Home" [ref=e459] [cursor=pointer]:
+          - /url: "#/en"
+        - link "Discovery" [active] [ref=e460] [cursor=pointer]:
+          - /url: "#/en/discovery"
+        - link "Leasing" [ref=e461] [cursor=pointer]:
+          - /url: "#/en/leasing"
+        - link "Marketplace" [ref=e462] [cursor=pointer]:
+          - /url: "#/en/mall"
+        - link "Suppliers" [ref=e463] [cursor=pointer]:
+          - /url: "#/en/suppliers"
+      - generic [ref=e470]:
+        - link "CN" [ref=e471] [cursor=pointer]:
+          - /url: "#/"
+          - img [ref=e472]
+          - generic [ref=e475]: CN
+        - generic [ref=e477]:
+          - link "Sign In" [ref=e478] [cursor=pointer]:
+            - /url: "#/en/login"
+          - link "Join Free" [ref=e479] [cursor=pointer]:
+            - /url: "#/en/register"
+  - main [ref=e480]:
+    - generic [ref=e1719]:
+      - generic [ref=e1721]:
+        - heading "Equipment Marketplace" [level=1] [ref=e1722]
+        - paragraph [ref=e1723]: Curated industrial equipment suppliers, one-stop sourcing platform
+      - generic [ref=e1724]:
+        - generic [ref=e1725]:
+          - generic [ref=e1726]:
+            - generic [ref=e1727]:
+              - img [ref=e1729]
+              - generic [ref=e1731]:
+                - heading "AI Equipment Selection Assistant" [level=3] [ref=e1732]
+                - paragraph [ref=e1733]: Smart recommendations to find the right equipment fast
+            - button [ref=e1734]:
+              - img [ref=e1735]
+          - generic [ref=e1739]:
+            - generic [ref=e1742]:
+              - generic [ref=e1743]:
+                - img [ref=e1744]
+                - generic [ref=e1747]: AI助手
+              - generic [ref=e1749]:
+                - paragraph [ref=e1750]: 您好！我是智能设备选择助手。我可以帮您：
+                - list [ref=e1751]:
+                  - listitem [ref=e1752]: 根据应用场景推荐合适的设备
+                  - listitem [ref=e1753]: 解答设备参数和性能问题
+                  - listitem [ref=e1754]: 对比不同设备的优劣
+                  - listitem [ref=e1755]: 提供选型建议和配置方案
+                - paragraph [ref=e1756]: 请告诉我您的需求，例如："我需要一台检测PCB板缺陷的设备"
+            - generic [ref=e1758]:
+              - textbox "描述您的设备需求，例如：我需要检测PCB板缺陷的设备..." [ref=e1759]
+              - button [disabled] [ref=e1760]:
+                - img [ref=e1761]
+        - generic [ref=e1765]:
+          - generic [ref=e1766]:
+            - img [ref=e1767]
+            - textbox "Search product name, model, brand..." [ref=e1770]
+          - button "Search" [ref=e1771]
+        - generic [ref=e1773]:
+          - generic [ref=e1775]:
+            - generic [ref=e1776]:
+              - button "Popular" [ref=e1777]
+              - button "Best Selling" [ref=e1778]
+              - 'button "Price: Low to High" [ref=e1779]'
+              - 'button "Price: High to Low" [ref=e1780]'
+              - button "Newest" [ref=e1781]
+            - generic [ref=e1782]:
+              - button [ref=e1783]:
+                - img [ref=e1784]
+              - button [ref=e1786]:
+                - img [ref=e1787]
+          - generic [ref=e1788]:
+            - img [ref=e1789]
+            - paragraph [ref=e1794]: Loading products...
+  - contentinfo [ref=e795]:
+    - generic [ref=e796]:
+      - generic [ref=e797]:
+        - generic [ref=e798]:
+          - heading "DongShiDi" [level=3] [ref=e799]
+          - paragraph [ref=e800]: Your premier global platform for AI vision inspection equipment. We connect international buyers with top-tier manufacturers for leasing, purchasing, and technical consulting.
+          - generic [ref=e801]:
+            - img [ref=e802]
+            - generic [ref=e805]: Global Shipping Available
+        - generic [ref=e806]:
+          - heading "Company" [level=4] [ref=e807]
+          - list [ref=e808]:
+            - listitem [ref=e809]:
+              - link "About Us" [ref=e810] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e811]:
+              - link "Global Partners" [ref=e812] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e813]:
+              - link "Terms of Service" [ref=e814] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e815]:
+              - link "Privacy Policy" [ref=e816] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e817]:
+          - heading "Support" [level=4] [ref=e818]
+          - list [ref=e819]:
+            - listitem [ref=e820]:
+              - link "Help Center" [ref=e821] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e822]:
+              - link "Submit a Ticket" [ref=e823] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e824]:
+              - link "Sourcing Request" [ref=e825] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e826]:
+              - link "Supplier Verification" [ref=e827] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e828]:
+          - heading "Contact Us" [level=4] [ref=e829]
+          - list [ref=e830]:
+            - listitem [ref=e831]:
+              - img [ref=e832]
+              - generic [ref=e835]:
+                - generic [ref=e836]: Email Support
+                - text: 2478686497@qq.com
+            - listitem [ref=e837]:
+              - img [ref=e838]
+              - generic [ref=e841]:
+                - generic [ref=e842]: Business Email
+                - text: 2696432359@qq.com
+          - generic [ref=e843]:
+            - link [ref=e844] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e845]
+            - link [ref=e847] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e848]
+            - link [ref=e850] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e851]
+      - generic [ref=e855]:
+        - paragraph [ref=e856]: © 2025 DongShiDi Global. All rights reserved.
+        - generic [ref=e857]:
+          - link "Sitemap" [ref=e858] [cursor=pointer]:
+            - /url: "#"
+          - link "Cookies" [ref=e859] [cursor=pointer]:
+            - /url: "#"
+          - link "Accessibility" [ref=e860] [cursor=pointer]:
+            - /url: "#"

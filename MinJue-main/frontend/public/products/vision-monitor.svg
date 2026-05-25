@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc"/>
+      <stop offset="100%" style="stop-color:#e2e8f0"/>
+    </linearGradient>
+  </defs>
+  <rect fill="url(#bg7)" width="400" height="400"/>
+  <!-- Vision Inspection System Frame -->
+  <rect x="60" y="80" width="280" height="280" rx="8" fill="#475569"/>
+  <!-- Cabinet -->
+  <rect x="200" y="100" width="120" height="240" rx="4" fill="#1e293b"/>
+  <!-- Screen -->
+  <rect x="210" y="110" width="100" height="80" rx="2" fill="#0f172a"/>
+  <rect x="215" y="115" width="90" height="70" rx="2" fill="#1e3a5f"/>
+  <!-- Inspection graphics -->
+  <rect x="225" y="125" width="35" height="25" stroke="#22c55e" stroke-width="1" fill="none"/>
+  <rect x="265" y="125" width="35" height="25" stroke="#22c55e" stroke-width="1" fill="none"/>
+  <text x="243" y="165" text-anchor="middle" font-family="Arial" font-size="8" fill="#22c55e">PASS</text>
+  <text x="283" y="165" text-anchor="middle" font-family="Arial" font-size="8" fill="#22c55e">PASS</text>
+  <!-- Status lights -->
+  <circle cx="230" cy="210" r="8" fill="#22c55e"/>
+  <circle cx="260" cy="210" r="8" fill="#3b82f6"/>
+  <circle cx="290" cy="210" r="8" fill="#64748b"/>
+  <!-- Inspection area -->
+  <rect x="80" y="120" width="100" height="200" rx="4" fill="#334155"/>
+  <!-- Camera -->
+  <rect x="110" y="130" width="40" height="30" rx="4" fill="#1e293b"/>
+  <circle cx="130" cy="145" r="10" fill="#0f172a"/>
+  <circle cx="130" cy="145" r="6" fill="#3b82f6"/>
+  <!-- Conveyor -->
+  <rect x="90" y="280" width="80" height="20" rx="2" fill="#0f172a"/>
+  <circle cx="105" cy="290" r="6" fill="#1e293b"/>
+  <circle cx="155" cy="290" r="6" fill="#1e293b"/>
+  <!-- Product being inspected -->
+  <rect x="115" y="240" width="30" height="30" rx="2" fill="#f59e0b"/>
+  <!-- Light bar -->
+  <rect x="90" y="180" width="80" height="10" rx="2" fill="#fbbf24"/>
+  <text x="200" y="385" text-anchor="middle" font-family="Arial" font-size="12" fill="#64748b">民崛视觉监测装置</text>
+</svg>

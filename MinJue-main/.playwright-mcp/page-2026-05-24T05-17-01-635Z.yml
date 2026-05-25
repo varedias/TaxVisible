@@ -1,0 +1,140 @@
+- generic [ref=e450]:
+  - banner [ref=e451]:
+    - generic [ref=e453]:
+      - link "DongShiDi Global" [ref=e455] [cursor=pointer]:
+        - /url: "#/en"
+        - generic [ref=e456]: DongShiDi
+        - generic [ref=e457]: Global
+      - navigation [ref=e458]:
+        - link "Home" [ref=e459] [cursor=pointer]:
+          - /url: "#/en"
+        - link "Discovery" [active] [ref=e460] [cursor=pointer]:
+          - /url: "#/en/discovery"
+        - link "Leasing" [ref=e461] [cursor=pointer]:
+          - /url: "#/en/leasing"
+        - link "Marketplace" [ref=e462] [cursor=pointer]:
+          - /url: "#/en/mall"
+        - link "Suppliers" [ref=e463] [cursor=pointer]:
+          - /url: "#/en/suppliers"
+      - generic [ref=e470]:
+        - link "CN" [ref=e471] [cursor=pointer]:
+          - /url: "#/"
+          - img [ref=e472]
+          - generic [ref=e475]: CN
+        - generic [ref=e477]:
+          - link "Sign In" [ref=e478] [cursor=pointer]:
+            - /url: "#/en/login"
+          - link "Join Free" [ref=e479] [cursor=pointer]:
+            - /url: "#/en/register"
+  - main [ref=e480]:
+    - generic [ref=e1803]:
+      - generic [ref=e1805]:
+        - heading "Equipment Leasing" [level=1] [ref=e1806]
+        - paragraph [ref=e1807]: Professional equipment leasing with flexible solutions
+      - generic [ref=e1808]:
+        - generic [ref=e1809]:
+          - button "Financial Lease Long-term · Ownership · Tax Benefits" [ref=e1810]:
+            - generic [ref=e1811]:
+              - img [ref=e1812]
+              - generic [ref=e1815]: Financial Lease
+            - paragraph [ref=e1816]: Long-term · Ownership · Tax Benefits
+          - button "Operating Lease Flexible · Ready-to-use · No Purchase" [ref=e1817]:
+            - generic [ref=e1818]:
+              - img [ref=e1819]
+              - generic [ref=e1821]: Operating Lease
+            - paragraph [ref=e1822]: Flexible · Ready-to-use · No Purchase
+        - generic [ref=e1824]:
+          - generic [ref=e1825]:
+            - img [ref=e1826]
+            - textbox "Search financial lease equipment..." [ref=e1829]
+          - button "Filter" [ref=e1830]:
+            - img [ref=e1831]
+            - generic [ref=e1833]: Filter
+        - generic [ref=e1834]:
+          - generic [ref=e1835]:
+            - generic [ref=e1836]:
+              - img [ref=e1838]
+              - heading "Equipment Ownership" [level=3] [ref=e1841]
+            - paragraph [ref=e1842]: Ownership transfers after lease term
+          - generic [ref=e1843]:
+            - generic [ref=e1844]:
+              - img [ref=e1846]
+              - heading "Tax Benefits" [level=3] [ref=e1849]
+            - paragraph [ref=e1850]: Deductible lease payments
+          - generic [ref=e1851]:
+            - generic [ref=e1852]:
+              - img [ref=e1854]
+              - heading "Fixed Asset" [level=3] [ref=e1857]
+            - paragraph [ref=e1858]: Capitalize as fixed asset
+        - paragraph [ref=e1861]: Loading...
+  - contentinfo [ref=e795]:
+    - generic [ref=e796]:
+      - generic [ref=e797]:
+        - generic [ref=e798]:
+          - heading "DongShiDi" [level=3] [ref=e799]
+          - paragraph [ref=e800]: Your premier global platform for AI vision inspection equipment. We connect international buyers with top-tier manufacturers for leasing, purchasing, and technical consulting.
+          - generic [ref=e801]:
+            - img [ref=e802]
+            - generic [ref=e805]: Global Shipping Available
+        - generic [ref=e806]:
+          - heading "Company" [level=4] [ref=e807]
+          - list [ref=e808]:
+            - listitem [ref=e809]:
+              - link "About Us" [ref=e810] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e811]:
+              - link "Global Partners" [ref=e812] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e813]:
+              - link "Terms of Service" [ref=e814] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e815]:
+              - link "Privacy Policy" [ref=e816] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e817]:
+          - heading "Support" [level=4] [ref=e818]
+          - list [ref=e819]:
+            - listitem [ref=e820]:
+              - link "Help Center" [ref=e821] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e822]:
+              - link "Submit a Ticket" [ref=e823] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e824]:
+              - link "Sourcing Request" [ref=e825] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e826]:
+              - link "Supplier Verification" [ref=e827] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e828]:
+          - heading "Contact Us" [level=4] [ref=e829]
+          - list [ref=e830]:
+            - listitem [ref=e831]:
+              - img [ref=e832]
+              - generic [ref=e835]:
+                - generic [ref=e836]: Email Support
+                - text: 2478686497@qq.com
+            - listitem [ref=e837]:
+              - img [ref=e838]
+              - generic [ref=e841]:
+                - generic [ref=e842]: Business Email
+                - text: 2696432359@qq.com
+          - generic [ref=e843]:
+            - link [ref=e844] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e845]
+            - link [ref=e847] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e848]
+            - link [ref=e850] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e851]
+      - generic [ref=e855]:
+        - paragraph [ref=e856]: © 2025 DongShiDi Global. All rights reserved.
+        - generic [ref=e857]:
+          - link "Sitemap" [ref=e858] [cursor=pointer]:
+            - /url: "#"
+          - link "Cookies" [ref=e859] [cursor=pointer]:
+            - /url: "#"
+          - link "Accessibility" [ref=e860] [cursor=pointer]:
+            - /url: "#"

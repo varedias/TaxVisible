@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340" viewBox="0 0 600 340">
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c2d12"/>
+      <stop offset="100%" style="stop-color:#431407"/>
+    </linearGradient>
+  </defs>
+  <rect fill="url(#bg5)" width="600" height="340"/>
+  <!-- 工厂建筑 -->
+  <rect fill="#92400e" x="50" y="120" width="200" height="150" rx="4"/>
+  <rect fill="#78350f" x="60" y="130" width="80" height="60"/>
+  <rect fill="#fbbf24" x="70" y="145" width="25" height="30"/>
+  <rect fill="#fbbf24" x="105" y="145" width="25" height="30"/>
+  <rect fill="#78350f" x="150" y="130" width="90" height="130"/>
+  <rect fill="#fbbf24" x="160" y="145" width="30" height="25"/>
+  <rect fill="#fbbf24" x="200" y="145" width="30" height="25"/>
+  <rect fill="#fbbf24" x="160" y="180" width="30" height="25"/>
+  <rect fill="#fbbf24" x="200" y="180" width="30" height="25"/>
+  <!-- 烟囱 -->
+  <rect fill="#a16207" x="180" y="80" width="30" height="50"/>
+  <ellipse fill="#d97706" cx="195" cy="65" rx="20" ry="12" opacity="0.6"/>
+  <ellipse fill="#fbbf24" cx="195" cy="50" rx="15" ry="8" opacity="0.4"/>
+  <!-- 生产线 -->
+  <rect fill="#b45309" x="300" y="140" width="250" height="130" rx="6"/>
+  <rect fill="#92400e" x="315" y="155" width="220" height="100" rx="4"/>
+  <!-- 传送带 -->
+  <rect fill="#78350f" x="330" y="200" width="190" height="15" rx="2"/>
+  <circle fill="#a16207" cx="345" cy="207" r="6"/>
+  <circle fill="#a16207" cx="370" cy="207" r="6"/>
+  <circle fill="#a16207" cx="395" cy="207" r="6"/>
+  <circle fill="#a16207" cx="420" cy="207" r="6"/>
+  <circle fill="#a16207" cx="445" cy="207" r="6"/>
+  <circle fill="#a16207" cx="470" cy="207" r="6"/>
+  <circle fill="#a16207" cx="495" cy="207" r="6"/>
+  <!-- 产品 -->
+  <rect fill="#fbbf24" x="350" y="185" width="20" height="15" rx="2"/>
+  <rect fill="#fcd34d" x="390" y="185" width="20" height="15" rx="2"/>
+  <rect fill="#fbbf24" x="430" y="185" width="20" height="15" rx="2"/>
+  <rect fill="#fcd34d" x="470" y="185" width="20" height="15" rx="2"/>
+  <!-- 机械臂 -->
+  <rect fill="#d97706" x="340" y="160" width="8" height="35"/>
+  <rect fill="#f59e0b" x="332" y="155" width="24" height="10" rx="2"/>
+  <rect fill="#d97706" x="480" y="160" width="8" height="35"/>
+  <rect fill="#f59e0b" x="472" y="155" width="24" height="10" rx="2"/>
+  <!-- 播放按钮 -->
+  <circle fill="rgba(255,255,255,0.95)" cx="300" cy="280" r="28"/>
+  <polygon fill="#b45309" points="292,265 292,295 318,280"/>
+  <!-- 探厂标签 -->
+  <rect fill="#dc2626" x="30" y="30" width="80" height="28" rx="4"/>
+  <text fill="white" font-family="Arial" font-size="12" font-weight="bold" x="70" y="49" text-anchor="middle">探厂实拍</text>
+  <!-- 标题 -->
+  <text fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold" x="300" y="325" text-anchor="middle">走进深圳AI视觉设备制造商</text>
+</svg>

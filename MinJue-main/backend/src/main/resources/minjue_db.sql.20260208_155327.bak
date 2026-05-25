@@ -1,0 +1,389 @@
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+DROP TABLE IF EXISTS `cms_content`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cms_content` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `title` varchar(200) NOT NULL COMMENT 'Title',
+  `title_en` varchar(200) DEFAULT NULL COMMENT 'English Title',
+  `type` varchar(20) DEFAULT NULL COMMENT 'Type: video, article, vlog',
+  `cover` varchar(255) DEFAULT NULL COMMENT 'Cover Image URL',
+  `content_url` text COMMENT 'Content URL or Body',
+  `author` varchar(50) DEFAULT NULL COMMENT 'Author',
+  `views` int DEFAULT '0' COMMENT 'View Count',
+  `category` varchar(50) DEFAULT NULL COMMENT 'Category: review, tutorial, vlog, news',
+  `tags` text COMMENT 'Tags (JSON Array)',
+  `status` tinyint DEFAULT '1' COMMENT '1:Published, 0:Draft',
+  `create_time` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Content/Discovery';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+LOCK TABLES `cms_content` WRITE;
+/*!40000 ALTER TABLE `cms_content` DISABLE KEYS */;
+INSERT INTO `cms_content` VALUES (1,'海康威视AI视觉检测系统深度测评','Hikvision AI Vision Inspection System In-depth Review','video','/products/placeholder-content.svg',NULL,'工业视觉达人',125601,'review','["AI检测","海康威视","测评"]',1,'2026-01-29 11:05:18'),(2,'基恩士vs康耐视 | 3D视觉传感器横评','Keyence vs Cognex | 3D Vision Sensor Comparison','video','/products/placeholder-content.svg',NULL,'智能制造观察者',89200,'review','["基恩士","康耐视","3D视觉"]',1,'2026-01-29 11:05:18'),(3,'如何选择工业相机?5个关键参数详解','How to Choose Industrial Cameras? 5 Key Parameters','article','/products/placeholder-content.svg',NULL,'机器视觉专家',8500,'tutorial','["工业相机","选购指南"]',1,'2026-01-29 11:05:18'),(4,'探厂实拍 | 走进深圳AI视觉检测设备制造商','Factory Tour | Inside Shenzhen AI Vision Equipment Manufacturer','vlog','/products/placeholder-content.svg',NULL,'工业探厂Vlog',234002,'vlog','["探厂","深圳","制造业"]',1,'2026-01-29 11:05:18');
+/*!40000 ALTER TABLE `cms_content` ENABLE KEYS */;
+UNLOCK TABLES;
+DROP TABLE IF EXISTS `oms_leasing`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `oms_leasing` (
+  `id` bigint NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `name` varchar(200) NOT NULL COMMENT '设备名称',
+  `type` varchar(20) NOT NULL COMMENT '租赁类型: financing-融资租赁, operating-经营租赁',
+  `image` varchar(255) DEFAULT NULL COMMENT '设备图片URL',
+  `description` text COMMENT '设备描述',
+  `supplier` varchar(100) DEFAULT NULL COMMENT '供应商名称',
+  `supplier_id` bigint DEFAULT NULL COMMENT '供应商ID',
+  `monthly_price` decimal(10,2) DEFAULT NULL COMMENT '月租金',
+  `total_price` decimal(10,2) DEFAULT NULL COMMENT '设备总价',
+  `duration` varchar(50) DEFAULT NULL COMMENT '租期(如: 36个月)',
+  `daily_price` decimal(10,2) DEFAULT NULL COMMENT '日租金',
+  `weekly_price` decimal(10,2) DEFAULT NULL COMMENT '周租金',
+  `benefits` text COMMENT '服务优势(JSON数组)',
+  `tags` text COMMENT '标签(JSON数组)',
+  `leased` int DEFAULT '0' COMMENT '已租次数',
+  `rating` decimal(2,1) DEFAULT '5.0' COMMENT '评分',
+  `status` tinyint DEFAULT '1' COMMENT '状�? 1-上架, 0-下架',
+  `create_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='租赁设备�?;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+LOCK TABLES `oms_leasing` WRITE;
+/*!40000 ALTER TABLE `oms_leasing` DISABLE KEYS */;
+INSERT INTO `oms_leasing` VALUES (1,'海康威视AI视觉检测系�?VIS-2000','financing','https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400','适合企业长期使用,租期结束后设备归您所�?,'深圳智视科技',NULL,2800.00,280000.00,'36个月',NULL,NULL,'[\"设备所有权转移\",\"税收优惠\",\"固定资产管理\"]','[\"AI检测\",\"设备所有权转移\"]',156,4.9,1,'2026-01-29 15:17:12','2026-01-29 15:17:12'),(2,'Basler ace系列工业相机套装','financing','https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400','200万像�?含镜�?适合生产线长期使�?,'杭州精准视觉',NULL,380.00,38000.00,'24个月',NULL,NULL,'[\"分期付款\",\"减轻资金压力\",\"设备归属权\"]','[\"工业相机\",\"长期租赁\"]',234,4.8,1,'2026-01-29 15:17:12','2026-01-29 15:17:12'),(3,'ABB IRB 1200工业机器�?,'financing','https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400','6轴机器人,负载7kg,适合自动化生产线','ABB授权代理�?,NULL,7200.00,850000.00,'48个月',NULL,NULL,'[\"设备升级选择\",\"维护服务包含\",\"产权转移\"]','[\"工业机器人\",\"融资租赁\"]',89,5.0,1,'2026-01-29 15:17:12','2026-01-29 15:17:12'),(4,'三坐标测量机 高精度版','financing','https://images.unsplash.com/photo-1581093458791-9d58b3fbbd0d?w=400','高精度三坐标测量,适合质检部门长期配置','上海精密仪器',NULL,15000.00,1800000.00,'48个月',NULL,NULL,'[\"技术升级服务\",\"培训支持\",\"设备所有权\"]','[\"精密测量\",\"高端设备\"]',45,4.9,1,'2026-01-29 15:17:12','2026-01-29 15:17:12'),(5,'AI视觉检测便携式系统','operating','https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400','适合项目型需�?随租随用,无需长期投入','北京视觉科技',NULL,4000.00,NULL,NULL,200.00,1200.00,'[\"按需租赁\",\"即租即用\",\"无设备折旧\"]','[\"短期租赁\",\"灵活使用\"]',456,4.7,1,'2026-01-29 15:17:12','2026-01-29 15:17:12'),(6,'工业内窥镜检测设�?,'operating','https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400','适合临时检测项�?设备维护由出租方负责','上海检测设�?,NULL,3000.00,NULL,NULL,150.00,900.00,'[\"设备维护免费\",\"技术指导\",\"灵活退租\"]','[\"内窥检测\",\"租期灵活\"]',567,4.6,1,'2026-01-29 15:17:12','2026-01-29 15:17:12'),(7,'红外热成像相机专业版','operating','https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=400','适合短期热成像检测项�?高精度测�?,'福禄克授权商',NULL,6000.00,NULL,NULL,300.00,1800.00,'[\"专业培训\",\"技术支持\",\"即用即还\"]','[\"热成像\",\"专业设备\"]',234,4.8,1,'2026-01-29 15:17:12','2026-01-29 15:17:12'),(8,'3D扫描仪便携款','operating','https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400','适合逆向工程项目,随用随租','三维扫描科技',NULL,5000.00,NULL,NULL,250.00,1500.00,'[\"软件授权包含\",\"数据处理支持\",\"灵活租期\"]','[\"3D扫描\",\"便携设备\"]',345,4.7,1,'2026-01-29 15:17:12','2026-01-29 15:17:12'),(9,'懂视帝AI视觉检测系�?DSD-2000','financing','https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400','适合企业长期使用，租期结束后设备归您所�?,'懂视帝智能科技',2,2800.00,280000.00,'36个月',NULL,NULL,'[\"设备所有权转移\",\"税收优惠\",\"固定资产管理\"]','[\"AI检测\",\"设备所有权转移\"]',156,4.9,1,'2026-01-29 15:28:54','2026-01-29 15:28:54'),(10,'Basler ace系列工业相机套装','financing','https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400','200万像素，含镜头，适合生产线长期使�?,'杭州精准视觉',3,380.00,38000.00,'24个月',NULL,NULL,'[\"分期付款\",\"减轻资金压力\",\"设备归属权\"]','[\"工业相机\",\"长期租赁\"]',234,4.8,1,'2026-01-29 15:28:54','2026-01-29 15:28:54'),(11,'ABB IRB 1200工业机器�?,'financing','https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400','6轴机器人，负�?kg，适合自动化生产线','北京博视自动�?,5,7200.00,850000.00,'48个月',NULL,NULL,'[\"设备升级选择\",\"维护服务包含\",\"产权转移\"]','[\"工业机器人\",\"融资租赁\"]',89,5.0,1,'2026-01-29 15:28:54','2026-01-29 15:28:54'),(12,'三坐标测量机 高精度版','financing','https://images.unsplash.com/photo-1581093458791-9d58b3fbbd0d?w=400','高精度三坐标测量，适合质检部门长期配置','北京博视自动�?,5,15000.00,1800000.00,'48个月',NULL,NULL,'[\"技术升级服务\",\"培训支持\",\"设备所有权\"]','[\"精密测量\",\"高端设备\"]',45,4.9,1,'2026-01-29 15:28:54','2026-01-29 15:28:54'),(13,'懂视帝AOI检测系�?DSD-AOI500','financing','https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400','PCB板AOI检测，双面检测，AI算法','懂视帝智能科技',2,5500.00,680000.00,'48个月',NULL,NULL,'[\"软件更新免费\",\"远程技术支持\",\"产权归属\"]','[\"AOI检测\",\"电子制造\"]',67,4.8,1,'2026-01-29 15:28:54','2026-01-29 15:28:54'),(14,'激光切割机 6000W','financing','https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400','6000W光纤激光，切割厚度20mm，适合金属加工','牧河自动�?,6,18000.00,2200000.00,'60个月',NULL,NULL,'[\"设备保险包含\",\"备件优先供应\",\"产权转移\"]','[\"激光切割\",\"高功率\"]',34,4.9,1,'2026-01-29 15:28:54','2026-01-29 15:28:54'),(15,'懂视帝便携式AI检测系�?,'operating','https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400','适合项目型需求，随租随用，无需长期投入','懂视帝智能科技',2,4000.00,NULL,NULL,200.00,1200.00,'[\"按需租赁\",\"即租即用\",\"无设备折旧\"]','[\"短期租赁\",\"灵活使用\"]',456,4.7,1,'2026-01-29 15:28:54','2026-01-29 15:28:54'),(16,'工业内窥镜检测设�?,'operating','https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400','适合临时检测项目，设备维护由出租方负责','上海光源智能',4,3000.00,NULL,NULL,150.00,900.00,'[\"设备维护免费\",\"技术指导\",\"灵活退租\"]','[\"内窥检测\",\"租期灵活\"]',567,4.6,1,'2026-01-29 15:28:54','2026-01-29 15:28:54'),(17,'红外热成像相机专业版','operating','https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=400','适合短期热成像检测项目，高精度测�?,'北京博视自动�?,5,6000.00,NULL,NULL,300.00,1800.00,'[\"专业培训\",\"技术支持\",\"即用即还\"]','[\"热成像\",\"专业设备\"]',234,4.8,1,'2026-01-29 15:28:54','2026-01-29 15:28:54'),(18,'3D扫描仪便携款','operating','https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400','适合逆向工程项目，随用随�?,'杭州精准视觉',3,5000.00,NULL,NULL,250.00,1500.00,'[\"软件授权包含\",\"数据处理支持\",\"灵活租期\"]','[\"3D扫描\",\"便携设备\"]',345,4.7,1,'2026-01-29 15:28:54','2026-01-29 15:28:54'),(19,'超声波探伤仪','operating','https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400','适合焊缝检测项目，按天计费更经�?,'北京博视自动�?,5,3500.00,NULL,NULL,180.00,1000.00,'[\"检测报告协助\",\"技术培训\",\"押金可退\"]','[\"无损检测\",\"短租\"]',456,4.6,1,'2026-01-29 15:28:54','2026-01-29 15:28:54'),(20,'便携式光谱分析仪','operating','https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400','材料成分分析，适合临时检测需�?,'上海光源智能',4,8000.00,NULL,NULL,400.00,2400.00,'[\"校准证书\",\"专家指导\",\"快速交付\"]','[\"光谱分析\",\"高端租赁\"]',123,4.9,1,'2026-01-29 15:28:54','2026-01-29 15:28:54'),(21,'旧款检测设�?已下�?','operating','https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400','此设备已下架，不再提供租赁服�?,'懂视帝智能科技',2,2000.00,NULL,NULL,100.00,600.00,'[\"已下架\"]','[\"已下架\"]',50,4.0,0,'2026-01-29 15:28:54','2026-01-29 15:28:54');
+/*!40000 ALTER TABLE `oms_leasing` ENABLE KEYS */;
+UNLOCK TABLES;
+DROP TABLE IF EXISTS `oms_leasing_application`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `oms_leasing_application` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `leasing_id` bigint NOT NULL COMMENT '租赁设备ID',
+  `user_id` bigint NOT NULL COMMENT '申请用户ID',
+  `lease_type` varchar(20) DEFAULT NULL COMMENT '租赁类型: FINANCIAL/OPERATING',
+  `lease_period` varchar(20) DEFAULT NULL COMMENT '租赁周期: DAY/WEEK/MONTH',
+  `lease_duration` int DEFAULT NULL COMMENT '租赁时长',
+  `estimated_cost` decimal(12,2) DEFAULT NULL COMMENT '预估费用',
+  `company_name` varchar(100) DEFAULT NULL COMMENT '企业名称',
+  `contact_name` varchar(50) DEFAULT NULL COMMENT '联系�?,
+  `contact_phone` varchar(20) DEFAULT NULL COMMENT '联系电话',
+  `remark` text COMMENT '备注',
+  `status` tinyint DEFAULT '0' COMMENT '状�? 0-待审�?1-已通过 2-已驳�?,
+  `create_time` datetime DEFAULT CURRENT_TIMESTAMP,
+  `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_leasing_id` (`leasing_id`),
+  KEY `idx_user_id` (`user_id`),
+  KEY `idx_status` (`status`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='租赁申请';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+LOCK TABLES `oms_leasing_application` WRITE;
+/*!40000 ALTER TABLE `oms_leasing_application` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oms_leasing_application` ENABLE KEYS */;
+UNLOCK TABLES;
+DROP TABLE IF EXISTS `oms_message`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `oms_message` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `sender_id` bigint NOT NULL COMMENT '发送者用户ID',
+  `receiver_id` bigint DEFAULT NULL COMMENT '接收者用户ID（供应商关联的用户ID�?,
+  `supplier_id` bigint NOT NULL COMMENT '供应商ID',
+  `content` text NOT NULL COMMENT '消息内容',
+  `message_type` varchar(20) NOT NULL DEFAULT 'TEXT' COMMENT '消息类型: TEXT/IMAGE/FILE',
+  `is_from_supplier` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否来自供应�?,
+  `is_read` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否已读',
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_sender` (`sender_id`),
+  KEY `idx_supplier` (`supplier_id`),
+  KEY `idx_create_time` (`create_time`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='即时消息�?;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+LOCK TABLES `oms_message` WRITE;
+/*!40000 ALTER TABLE `oms_message` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oms_message` ENABLE KEYS */;
+UNLOCK TABLES;
+DROP TABLE IF EXISTS `oms_order`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `oms_order` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `order_no` varchar(64) NOT NULL COMMENT 'Order Number',
+  `user_id` bigint NOT NULL,
+  `total_amount` decimal(10,2) NOT NULL,
+  `status` tinyint DEFAULT '0' COMMENT '0:Pending, 1:Paid, 2:Shipped, 3:Completed, 4:Cancelled',
+  `pay_time` datetime DEFAULT NULL,
+  `delivery_time` datetime DEFAULT NULL,
+  `finish_time` datetime DEFAULT NULL,
+  `create_time` datetime DEFAULT CURRENT_TIMESTAMP,
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_order_no` (`order_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Orders';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+LOCK TABLES `oms_order` WRITE;
+/*!40000 ALTER TABLE `oms_order` DISABLE KEYS */;
+INSERT INTO `oms_order` VALUES (1,'202601290001',4,89800.00,3,'2026-01-20 10:30:00',NULL,NULL,'2026-01-20 10:00:00',NULL),(2,'202601290002',5,45600.00,2,'2026-01-22 14:20:00',NULL,NULL,'2026-01-22 14:00:00',NULL),(3,'202601290003',6,128000.00,1,'2026-01-25 09:15:00',NULL,NULL,'2026-01-25 09:00:00',NULL),(4,'202601290004',4,35800.00,0,NULL,NULL,NULL,'2026-01-28 16:30:00',NULL),(5,'202601290005',7,68500.00,4,NULL,NULL,NULL,'2026-01-27 11:00:00',NULL),(6,'202601290006',5,156000.00,3,'2026-01-15 08:45:00',NULL,NULL,'2026-01-15 08:30:00',NULL),(7,'202601290007',6,42000.00,2,'2026-01-26 15:00:00',NULL,NULL,'2026-01-26 14:30:00',NULL),(8,'202601290008',4,98500.00,1,'2026-01-29 10:00:00',NULL,NULL,'2026-01-29 09:30:00',NULL);
+/*!40000 ALTER TABLE `oms_order` ENABLE KEYS */;
+UNLOCK TABLES;
+DROP TABLE IF EXISTS `oms_order_item`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `oms_order_item` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `order_id` bigint NOT NULL COMMENT 'Order ID',
+  `product_id` bigint NOT NULL COMMENT 'Product ID',
+  `product_name` varchar(200) DEFAULT NULL COMMENT 'Product Name Snapshot',
+  `product_image` varchar(255) DEFAULT NULL COMMENT 'Product Image Snapshot',
+  `product_price` decimal(10,2) DEFAULT NULL COMMENT 'Product Price Snapshot',
+  `quantity` int DEFAULT '1' COMMENT 'Quantity',
+  `subtotal` decimal(10,2) DEFAULT NULL COMMENT 'Subtotal',
+  PRIMARY KEY (`id`),
+  KEY `idx_order_id` (`order_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Order Items';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+LOCK TABLES `oms_order_item` WRITE;
+/*!40000 ALTER TABLE `oms_order_item` DISABLE KEYS */;
+INSERT INTO `oms_order_item` VALUES (1,1,1,'懂视帝AI视觉检测系�?DSD-2000','/products/minjue-product-1.png',89800.00,1,89800.00),(2,2,2,'懂视帝智能缺陷检测仪 DSD-QC3000','/products/minjue-product-2.png',45600.00,1,45600.00),(3,3,3,'懂视帝高速视觉分拣系�?DSD-Sort500','/products/minjue-product-3.png',128000.00,1,128000.00),(4,4,4,'康耐视In-Sight 2000系列视觉传感�?,'/products/1-parameter.jpg',35800.00,1,35800.00),(5,5,5,'基恩士CV-X系列图像传感�?,'/products/2-parameter.jpg',68500.00,1,68500.00),(6,6,1,'懂视帝AI视觉检测系�?DSD-2000','/products/minjue-product-1.png',89800.00,1,89800.00),(7,6,2,'懂视帝智能缺陷检测仪 DSD-QC3000','/products/minjue-product-2.png',66200.00,1,66200.00),(8,7,6,'Basler ace系列工业相机套装','/products/3-parameter.jpg',42000.00,1,42000.00),(9,8,1,'懂视帝AI视觉检测系�?DSD-2000','/products/minjue-product-1.png',89800.00,1,89800.00),(10,8,4,'康耐视In-Sight 2000系列视觉传感�?,'/products/1-parameter.jpg',8700.00,1,8700.00);
+/*!40000 ALTER TABLE `oms_order_item` ENABLE KEYS */;
+UNLOCK TABLES;
+DROP TABLE IF EXISTS `oms_supplier`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `oms_supplier` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL COMMENT 'Supplier Name',
+  `logo` varchar(255) DEFAULT NULL COMMENT 'Logo URL',
+  `description` text COMMENT 'Description',
+  `contact_info` varchar(255) DEFAULT NULL COMMENT 'Contact Info (JSON)',
+  `is_verified` tinyint DEFAULT '0' COMMENT '0:Unverified, 1:Verified',
+  `create_time` datetime DEFAULT CURRENT_TIMESTAMP,
+  `user_id` bigint DEFAULT NULL COMMENT 'Linked User ID',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Suppliers';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+LOCK TABLES `oms_supplier` WRITE;
+/*!40000 ALTER TABLE `oms_supplier` DISABLE KEYS */;
+INSERT INTO `oms_supplier` VALUES (1,'民崛智能科技有限公司','https://ui-avatars.com/api/?name=MJ&background=6366F1&color=fff','专注于模具行业智能化解决方案，提供模具视觉监测、缺陷检测等智能装备�?,'{\"phone\":\"400-xxx-xxxx\",\"email\":\"info@min-jue.com\",\"address\":\"浙江省宁波市\"}',1,'2026-01-29 11:04:41',NULL),(2,'牧河自动化设备有限公�?,'https://ui-avatars.com/api/?name=MH&background=10B981&color=fff','专业自动化上料设备制造商，产品广泛应用于电子、塑料、五金等行业�?,'{\"phone\":\"400-xxx-xxxx\",\"email\":\"contact@muhe-auto.com\",\"address\":\"江苏省苏州市工业园区\"}',1,'2026-01-29 11:04:41',NULL),(3,'深圳智视科技有限公司','https://ui-avatars.com/api/?name=ZS&background=0D8ABC&color=fff','专注于工业AI视觉检测解决方案，拥有自主研发的深度学习算法平台�?,'{\"phone\":\"400-888-8888\",\"email\":\"contact@zhishi-tech.com\",\"address\":\"深圳市南山区科技园\"}',1,'2026-01-29 11:04:41',NULL),(4,'杭州精准视觉设备�?,'https://ui-avatars.com/api/?name=JZ&background=22C55E&color=fff','国内领先的工业相机制造商，产品广泛应用于电子、汽车、医药等行业�?,'{\"phone\":\"400-xxx-xxxx\",\"email\":\"sales@jzvision.com\",\"address\":\"杭州市滨江区\"}',1,'2026-01-29 11:04:41',NULL),(5,'上海光源智能装备','https://ui-avatars.com/api/?name=GY&background=F59E0B&color=fff','专业研发生产机器视觉LED光源，提供定制化光源解决方案�?,'{\"phone\":\"400-xxx-xxxx\",\"email\":\"info@gylight.com\",\"address\":\"上海市浦东新区\"}',1,'2026-01-29 11:04:41',NULL),(6,'北京博视自动化技�?,'https://ui-avatars.com/api/?name=BS&background=EF4444&color=fff','资深自动化系统集成商，服务于航空航天、军工等高端制造领域�?,'{\"phone\":\"400-xxx-xxxx\",\"email\":\"service@boshi-auto.com\",\"address\":\"北京市海淀区中关村\"}',1,'2026-01-29 11:04:41',NULL);
+/*!40000 ALTER TABLE `oms_supplier` ENABLE KEYS */;
+UNLOCK TABLES;
+DROP TABLE IF EXISTS `pms_category`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pms_category` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `parent_id` bigint DEFAULT '0',
+  `sort` int DEFAULT '0',
+  `icon` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Product Categories';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+LOCK TABLES `pms_category` WRITE;
+/*!40000 ALTER TABLE `pms_category` DISABLE KEYS */;
+INSERT INTO `pms_category` VALUES (1,'AI视觉检�?,0,1,'eye'),(2,'自动化设�?,0,2,'settings'),(3,'工业相机',0,3,'camera'),(4,'光源镜头',0,4,'sun'),(5,'测量仪器',0,5,'ruler'),(6,'工业机器�?,0,6,'robot');
+/*!40000 ALTER TABLE `pms_category` ENABLE KEYS */;
+UNLOCK TABLES;
+DROP TABLE IF EXISTS `pms_comment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pms_comment` (
+  `id` bigint NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `product_id` bigint NOT NULL COMMENT '商品ID',
+  `user_id` bigint NOT NULL COMMENT '用户ID',
+  `user_name` varchar(50) DEFAULT NULL COMMENT '用户�?,
+  `user_avatar` varchar(255) DEFAULT NULL COMMENT '用户头像',
+  `rating` tinyint DEFAULT '5' COMMENT '评分: 1-5�?,
+  `content` text COMMENT '评论内容',
+  `images` text COMMENT '评论图片(JSON数组)',
+  `helpful` int DEFAULT '0' COMMENT '有用�?,
+  `status` tinyint DEFAULT '1' COMMENT '状�? 1-显示, 0-隐藏',
+  `create_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`),
+  KEY `idx_product_id` (`product_id`),
+  KEY `idx_user_id` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='商品评论�?;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+LOCK TABLES `pms_comment` WRITE;
+/*!40000 ALTER TABLE `pms_comment` DISABLE KEYS */;
+INSERT INTO `pms_comment` VALUES (1,1,4,'张先�?,'https://ui-avatars.com/api/?name=ZS&background=random',5,'设备非常好用，精度高，检测速度快，售后服务也很到位。已经用�?个月，运行稳定，推荐购买�?,NULL,234,1,'2026-01-29 15:31:34'),(2,1,5,'李工','https://ui-avatars.com/api/?name=LG&background=random',5,'公司采购了多台，效果非常好。技术支持响应很快，解决问题很专业�?,NULL,189,1,'2026-01-29 15:31:34'),(3,1,6,'王经�?,'https://ui-avatars.com/api/?name=WJL&background=random',4,'总体不错，性价比很高。操作简单，功能实用�?,NULL,156,1,'2026-01-29 15:31:34'),(4,2,4,'张先�?,'https://ui-avatars.com/api/?name=ZS&background=random',5,'缺陷检测准确率很高，大大提升了我们的质检效率�?,NULL,145,1,'2026-01-29 15:31:34'),(5,2,7,'赵六','https://ui-avatars.com/api/?name=ZL&background=random',5,'深度学习算法确实强大，各种缺陷都能识别出来�?,NULL,98,1,'2026-01-29 15:31:34'),(6,3,5,'李工','https://ui-avatars.com/api/?name=LG&background=random',5,'3D视觉传感器精度很高，满足我们的测量需求�?,NULL,87,1,'2026-01-29 15:31:34'),(7,4,6,'王经�?,'https://ui-avatars.com/api/?name=WJL&background=random',5,'模具监测系统很实用，帮我们避免了很多模具损坏�?,NULL,123,1,'2026-01-29 15:31:34'),(8,5,4,'张先�?,'https://ui-avatars.com/api/?name=ZS&background=random',4,'模具保护器效果不错，性价比高�?,NULL,67,1,'2026-01-29 15:31:34'),(9,6,7,'赵六','https://ui-avatars.com/api/?name=ZL&background=random',5,'Basler相机画质清晰，帧率稳定，很满意�?,NULL,234,1,'2026-01-29 15:31:34'),(10,6,5,'李工','https://ui-avatars.com/api/?name=LG&background=random',5,'工业相机性能稳定，已经用了半年没出过问题�?,NULL,178,1,'2026-01-29 15:31:34');
+/*!40000 ALTER TABLE `pms_comment` ENABLE KEYS */;
+UNLOCK TABLES;
+DROP TABLE IF EXISTS `pms_procurement`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pms_procurement` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `title` varchar(200) NOT NULL COMMENT '采购标题',
+  `description` text COMMENT '采购描述',
+  `category_id` bigint DEFAULT NULL COMMENT '设备分类',
+  `budget_min` decimal(12,2) DEFAULT NULL COMMENT '预算下限',
+  `budget_max` decimal(12,2) DEFAULT NULL COMMENT '预算上限',
+  `quantity` int DEFAULT NULL COMMENT '需求数�?,
+  `deadline` date DEFAULT NULL COMMENT '截止日期',
+  `contact_name` varchar(50) DEFAULT NULL COMMENT '联系�?,
+  `contact_phone` varchar(20) DEFAULT NULL COMMENT '联系电话',
+  `user_id` bigint NOT NULL COMMENT '发布用户',
+  `status` tinyint DEFAULT '1' COMMENT '状�? 1-进行�?2-已完�?3-已关�?,
+  `create_time` datetime DEFAULT CURRENT_TIMESTAMP,
+  `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_user_id` (`user_id`),
+  KEY `idx_status` (`status`),
+  KEY `idx_category_id` (`category_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='采购需�?;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+LOCK TABLES `pms_procurement` WRITE;
+/*!40000 ALTER TABLE `pms_procurement` DISABLE KEYS */;
+INSERT INTO `pms_procurement` VALUES (1,'急需工业视觉检测设�?,'需要采购一批高精度视觉检测设备，用于电子元器件质检产线，要求检测精度≤0.01mm',1,50000.00,200000.00,5,'2026-03-15','张工','138****1234',1,1,'2026-02-08 13:35:05','2026-02-08 13:35:05'),(2,'采购二手数控机床','因产线扩建，需要采�?台二手数控机床，品牌不限，精度达标即�?,2,80000.00,150000.00,3,'2026-03-01','李经�?,'139****5678',1,1,'2026-02-08 13:35:05','2026-02-08 13:35:05'),(3,'智能仓储AGV小车采购','AGV搬运机器人采购，用于工厂内部物流运输，需支持自动充电和路径规�?,3,200000.00,500000.00,10,'2026-04-01','王主�?,'136****9012',1,1,'2026-02-08 13:35:05','2026-02-08 13:35:05'),(4,'自动化焊接机器人','需�?轴工业焊接机器人，适用于汽车零部件焊接，含编程调试服务',4,300000.00,800000.00,2,'2026-03-20','赵�?,'135****3456',1,1,'2026-02-08 13:35:05','2026-02-08 13:35:05'),(5,'3D打印设备租赁或购�?,'用于产品原型快速打印，金属和塑料材质均可，优先考虑租赁方案',5,100000.00,300000.00,1,'2026-02-28','陈工','137****7890',1,1,'2026-02-08 13:35:05','2026-02-08 13:35:05'),(6,'工业激光切割机','需要大功率激光切割设备，切割厚度�?0mm碳钢板，含安装调�?,6,400000.00,1000000.00,1,'2026-04-15','刘经�?,'133****2345',1,1,'2026-02-08 13:35:05','2026-02-08 13:35:05');
+/*!40000 ALTER TABLE `pms_procurement` ENABLE KEYS */;
+UNLOCK TABLES;
+DROP TABLE IF EXISTS `pms_product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pms_product` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `supplier_id` bigint NOT NULL,
+  `category_id` bigint NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `original_price` decimal(10,2) DEFAULT NULL,
+  `stock` int DEFAULT '0',
+  `image` varchar(255) DEFAULT NULL COMMENT 'Main Image',
+  `album` text COMMENT 'Image Album (JSON)',
+  `description` text,
+  `specs` text COMMENT 'Specifications (JSON)',
+  `status` tinyint DEFAULT '1' COMMENT '1:On Sale, 0:Off Sale',
+  `sales` int DEFAULT '0',
+  `views` int DEFAULT '0',
+  `create_time` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Products';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+LOCK TABLES `pms_product` WRITE;
+/*!40000 ALTER TABLE `pms_product` DISABLE KEYS */;
+INSERT INTO `pms_product` VALUES (1,1,1,'民崛智能模具视觉监测装置 MJ-VIS-A8',35800.00,42000.00,100,'/products/minjue-product-1.png',NULL,'专业模具视觉监测系统，实时监控模具状态，AI智能识别异常，适用于注塑、压铸等行业','[\"高清工业相机\",\"智能算法\",\"实时监控\",\"异常报警\"]',1,856,12500,'2026-01-29 11:04:41'),(2,1,1,'民崛智能模具保护监视�?MJ-MP-PRO',28900.00,35000.00,80,'/products/mold-protector.svg',NULL,'实时监控模具运行状态，自动检测异常，防止模具损坏，降低生产成�?,'[\"模具保护\",\"实时检测\",\"自动报警\",\"数据记录\"]',1,1023,15800,'2026-01-29 11:04:41'),(3,1,1,'民崛智能缺陷检测系�?MJ-QC-3000',42000.00,50000.00,50,'/products/minjue-product-3.png',NULL,'采用深度学习算法，精准识别产品表面缺陷，检测精度高�?9.5%','[\"深度学习\",\"高精度检测\",\"多种缺陷识别\",\"自动分类\"]',1,645,9800,'2026-01-29 11:04:41'),(4,2,2,'牧河自动化上料机 MH-FL-200',18900.00,22000.00,200,'/products/auto-feeder.svg',NULL,'全自动上料系统，适用于各类生产线，提升生产效�?,'[\"自动上料\",\"高效稳定\",\"多规格适配\"]',1,1234,18502,'2026-01-29 11:04:41'),(5,3,1,'海康威视AI视觉检测系�?VIS-2000',28900.00,35000.00,60,'/products/ai-vision-system.svg',NULL,'2D+3D双模�? 深度学习算法, 0.1mm精度','[\"2D+3D双模式\",\"深度学习算法\",\"0.1mm精度\"]',1,1245,15600,'2026-01-29 11:04:41'),(6,4,3,'Basler ace系列工业相机套装',4299.00,4999.00,500,'/products/industrial-camera.svg',NULL,'200万像�? GigE接口, 含镜�?,'[\"200万像素\",\"GigE接口\",\"含镜头\"]',1,2234,25004,'2026-01-29 11:04:41'),(7,5,4,'CCS LED环形光源 LDR2-100',680.00,800.00,1000,'/products/led-ring-light.svg',NULL,'高亮�? 可调�? 多种规格','[\"高亮度\",\"可调光\",\"多种规格\"]',1,5678,35006,'2026-01-29 11:04:41'),(8,6,5,'基恩�?D激光轮廓仪',15800.00,18000.00,30,'/products/vision-monitor.svg',NULL,'超高精度3D测量, 适用于各种材�?,'[\"微米级精度\",\"抗干扰\",\"多材质适用\"]',1,567,8900,'2026-01-29 11:04:41'),(9,6,6,'ABB工业机器人IRB 1200',45000.00,52000.00,20,'/products/qc-system.svg',NULL,'5kg/7kg负载, 适用于装配和物料搬运','[\"高速\",\"紧凑型\",\"5kg/7kg负载\"]',1,345,6500,'2026-01-29 11:04:41'),(10,4,4,'远心镜头 50mm',1200.00,1500.00,300,'/products/telecentric-lens.svg',NULL,'支持2/3英寸靶面, C接口','[\"低畸变\",\"高分辨率\",\"C接口\"]',1,890,11200,'2026-01-29 11:04:41');
+/*!40000 ALTER TABLE `pms_product` ENABLE KEYS */;
+UNLOCK TABLES;
+DROP TABLE IF EXISTS `sys_user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `sys_user` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL COMMENT 'Username',
+  `password` varchar(100) NOT NULL COMMENT 'Encrypted Password',
+  `nickname` varchar(50) DEFAULT NULL COMMENT 'Nickname',
+  `email` varchar(100) DEFAULT NULL COMMENT 'Email',
+  `phone` varchar(20) DEFAULT NULL COMMENT 'Phone',
+  `avatar` varchar(255) DEFAULT NULL COMMENT 'Avatar URL',
+  `role` varchar(20) DEFAULT 'USER' COMMENT 'Role: USER, SUPPLIER, ADMIN',
+  `status` tinyint DEFAULT '1' COMMENT '1:Enabled, 0:Disabled',
+  `create_time` datetime DEFAULT CURRENT_TIMESTAMP,
+  `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='System Users';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+LOCK TABLES `sys_user` WRITE;
+/*!40000 ALTER TABLE `sys_user` DISABLE KEYS */;
+INSERT INTO `sys_user` VALUES (1,'admin','$2a$10$zL.MMJQGI0hTx/bC8lRyHuv6485l7cUy088yV1z/kHNOiMycU5feW','Administrator','2478686497@qq.com','18396309762',NULL,'ADMIN',1,'2026-01-29 10:50:59','2026-01-29 13:22:28'),(3,'supplier','$2a$10$zL.MMJQGI0hTx/bC8lRyHuv6485l7cUy088yV1z/kHNOiMycU5feW','供应商测试账�?,'2478686497@qq.com','18396309762',NULL,'SUPPLIER',1,'2026-01-29 11:15:53','2026-01-29 13:22:28'),(4,'buyer','$2a$10$zL.MMJQGI0hTx/bC8lRyHuv6485l7cUy088yV1z/kHNOiMycU5feW','采购方测试账�?,'2478686497@qq.com','18396309762',NULL,'USER',1,'2026-01-29 11:15:53','2026-01-29 13:22:28');
+/*!40000 ALTER TABLE `sys_user` ENABLE KEYS */;
+UNLOCK TABLES;
+DROP TABLE IF EXISTS `ums_favorite`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ums_favorite` (
+  `id` bigint NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `user_id` bigint NOT NULL COMMENT '用户ID',
+  `target_type` varchar(20) NOT NULL COMMENT '目标类型: product-商品, supplier-供应�? content-内容',
+  `target_id` bigint NOT NULL COMMENT '目标ID',
+  `target_name` varchar(200) DEFAULT NULL COMMENT '目标名称(冗余)',
+  `target_image` varchar(255) DEFAULT NULL COMMENT '目标图片(冗余)',
+  `create_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_user_target` (`user_id`,`target_type`,`target_id`),
+  KEY `idx_user_id` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='用户收藏�?;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+LOCK TABLES `ums_favorite` WRITE;
+/*!40000 ALTER TABLE `ums_favorite` DISABLE KEYS */;
+INSERT INTO `ums_favorite` VALUES (1,4,'product',1,'懂视帝AI视觉检测系�?DSD-2000','/products/minjue-product-1.png','2026-01-29 15:31:34'),(2,4,'product',6,'Basler ace系列工业相机套装','/products/3-parameter.jpg','2026-01-29 15:31:34'),(3,5,'product',2,'懂视帝智能缺陷检测仪 DSD-QC3000','/products/minjue-product-2.png','2026-01-29 15:31:34'),(4,5,'product',4,'民崛智能模具视觉监测装置 MJ-VIS-A8','/products/1-parameter.jpg','2026-01-29 15:31:34'),(5,6,'product',1,'懂视帝AI视觉检测系�?DSD-2000','/products/minjue-product-1.png','2026-01-29 15:31:34'),(6,6,'supplier',2,'懂视帝智能科技有限公司','https://ui-avatars.com/api/?name=DSD&background=0D8ABC&color=fff','2026-01-29 15:31:34'),(7,7,'product',3,'懂视�?D视觉传感�?DSD-3D100','/products/minjue-product-3.png','2026-01-29 15:31:34'),(8,7,'content',1,'懂视帝AI视觉检测系统深度测�?,'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600','2026-01-29 15:31:34');
+/*!40000 ALTER TABLE `ums_favorite` ENABLE KEYS */;
+UNLOCK TABLES;
+DROP TABLE IF EXISTS `ums_like`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ums_like` (
+  `id` bigint NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `user_id` bigint NOT NULL COMMENT '用户ID',
+  `target_type` varchar(20) NOT NULL COMMENT '目标类型: product-商品, comment-评论, content-内容',
+  `target_id` bigint NOT NULL COMMENT '目标ID',
+  `create_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_user_target` (`user_id`,`target_type`,`target_id`),
+  KEY `idx_target` (`target_type`,`target_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='用户点赞�?;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+LOCK TABLES `ums_like` WRITE;
+/*!40000 ALTER TABLE `ums_like` DISABLE KEYS */;
+INSERT INTO `ums_like` VALUES (1,4,'product',1,'2026-01-29 15:31:34'),(2,4,'product',2,'2026-01-29 15:31:34'),(3,4,'product',6,'2026-01-29 15:31:34'),(4,5,'product',1,'2026-01-29 15:31:34'),(5,5,'product',3,'2026-01-29 15:31:34'),(6,5,'product',4,'2026-01-29 15:31:34'),(7,6,'product',2,'2026-01-29 15:31:34'),(8,6,'product',5,'2026-01-29 15:31:34'),(9,6,'product',6,'2026-01-29 15:31:34'),(10,7,'product',1,'2026-01-29 15:31:34'),(11,7,'product',2,'2026-01-29 15:31:34'),(12,7,'product',3,'2026-01-29 15:31:34'),(13,4,'comment',1,'2026-01-29 15:31:34'),(14,5,'comment',1,'2026-01-29 15:31:34'),(15,6,'comment',2,'2026-01-29 15:31:34'),(16,4,'content',1,'2026-01-29 15:31:34'),(17,5,'content',1,'2026-01-29 15:31:34'),(18,6,'content',2,'2026-01-29 15:31:34');
+/*!40000 ALTER TABLE `ums_like` ENABLE KEYS */;
+UNLOCK TABLES;
+DROP TABLE IF EXISTS `ums_share`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ums_share` (
+  `id` bigint NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `user_id` bigint DEFAULT NULL COMMENT '用户ID(可为�?未登录用�?',
+  `target_type` varchar(20) NOT NULL COMMENT '目标类型: product-商品, supplier-供应�? content-内容',
+  `target_id` bigint NOT NULL COMMENT '目标ID',
+  `target_name` varchar(200) DEFAULT NULL COMMENT '目标名称',
+  `share_url` varchar(500) DEFAULT NULL COMMENT '分享链接',
+  `platform` varchar(20) DEFAULT NULL COMMENT '分享平台: copy-复制链接, wechat-微信, weibo-微博',
+  `create_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`),
+  KEY `idx_target` (`target_type`,`target_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='分享记录�?;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+LOCK TABLES `ums_share` WRITE;
+/*!40000 ALTER TABLE `ums_share` DISABLE KEYS */;
+INSERT INTO `ums_share` VALUES (1,4,'product',1,'懂视帝AI视觉检测系�?DSD-2000','/product/1','copy','2026-01-29 15:31:34'),(2,5,'product',2,'懂视帝智能缺陷检测仪 DSD-QC3000','/product/2','wechat','2026-01-29 15:31:34'),(3,6,'product',6,'Basler ace系列工业相机套装','/product/6','copy','2026-01-29 15:31:34'),(4,NULL,'product',1,'懂视帝AI视觉检测系�?DSD-2000','/product/1','copy','2026-01-29 15:31:34'),(5,NULL,'product',3,'懂视�?D视觉传感�?DSD-3D100','/product/3','weibo','2026-01-29 15:31:34'),(6,4,'content',1,'懂视帝AI视觉检测系统深度测�?,'/content/1','wechat','2026-01-29 15:31:34');
+/*!40000 ALTER TABLE `ums_share` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+

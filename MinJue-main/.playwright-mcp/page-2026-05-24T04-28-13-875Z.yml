@@ -1,0 +1,349 @@
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - link "登录" [ref=e7] [cursor=pointer]:
+        - /url: "#/login"
+        - img [ref=e8]
+        - text: 登录
+      - generic [ref=e11]: "|"
+      - link "免费注册" [ref=e12] [cursor=pointer]:
+        - /url: "#/register"
+        - img [ref=e13]
+        - text: 免费注册
+      - generic [ref=e16]: "|"
+      - button "免费开店" [ref=e17]:
+        - img [ref=e18]
+        - text: 免费开店
+      - generic [ref=e22]: "|"
+      - link "跨境服务" [ref=e23] [cursor=pointer]:
+        - /url: "#/en"
+        - img [ref=e24]
+        - text: 跨境服务
+    - generic [ref=e27]:
+      - link "帮助中心" [ref=e28] [cursor=pointer]:
+        - /url: "#/help"
+      - link "联系客服" [ref=e29] [cursor=pointer]:
+        - /url: "#/contact"
+  - banner [ref=e30]:
+    - generic [ref=e31]:
+      - generic [ref=e33]: 懂视帝
+      - navigation [ref=e34]:
+        - link "首页" [ref=e35] [cursor=pointer]:
+          - /url: "#/"
+        - link "发现" [ref=e36] [cursor=pointer]:
+          - /url: "#/discovery"
+        - link "租赁" [ref=e37] [cursor=pointer]:
+          - /url: "#/leasing"
+        - link "商城" [ref=e38] [cursor=pointer]:
+          - /url: "#/mall"
+        - button "个人中心" [ref=e39]
+        - button "账号设置" [ref=e40]
+  - main [ref=e41]:
+    - generic [ref=e42]:
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - img [ref=e47]
+          - textbox "搜索设备分类、产品型号、供应商..." [ref=e50]
+        - button "搜索" [ref=e51]
+      - generic [ref=e52]:
+        - generic [ref=e53]:
+          - generic [ref=e54]:
+            - generic [ref=e55]:
+              - heading "发现推荐" [level=2] [ref=e56]: 发现推荐
+              - paragraph [ref=e58]: 精选测评、探厂与实战内容，首页直接展示更完整的标题、摘要与标签信息。
+            - button "查看更多" [ref=e59]:
+              - text: 查看更多
+              - img [ref=e60]
+          - generic [ref=e62]:
+            - generic [ref=e63] [cursor=pointer]:
+              - generic [ref=e64]:
+                - img "民崛智能方案纪实：复杂来料下的视觉分拣稳定性验证" [ref=e65]
+                - generic:
+                  - generic:
+                    - img
+              - generic [ref=e66]:
+                - generic [ref=e67]:
+                  - generic [ref=e68]: 视频
+                  - generic [ref=e69]: 测评
+                  - generic [ref=e70]: 刚刚
+                - heading "民崛智能方案纪实：复杂来料下的视觉分拣稳定性验证" [level=3] [ref=e71]
+                - paragraph [ref=e72]: 补充复杂来料、多规格混流下的识别与分拣稳定性展示，让发现页前排内容更完整地覆盖设备能力与应用场景。
+                - generic [ref=e73]:
+                  - generic [ref=e74]: "#复杂来料"
+                  - generic [ref=e75]: "#稳定性验证"
+                  - generic [ref=e76]: "#视觉分拣"
+                - generic [ref=e77]:
+                  - generic [ref=e78]: 民崛智能
+                  - generic [ref=e80]:
+                    - img [ref=e81]
+                    - text: 428,000
+            - generic [ref=e84] [cursor=pointer]:
+              - generic [ref=e85]:
+                - img "民崛智能分拣现场实拍：高速识别与自动分流演示" [ref=e86]
+                - generic:
+                  - generic:
+                    - img
+              - generic [ref=e87]:
+                - generic [ref=e88]:
+                  - generic [ref=e89]: 视频
+                  - generic [ref=e90]: 产线实拍
+                  - generic [ref=e91]: 刚刚
+                - heading "民崛智能分拣现场实拍：高速识别与自动分流演示" [level=3] [ref=e92]
+                - paragraph [ref=e93]: 聚焦民崛智能现场分拣节拍、识别速度和自动分流动作，让客户在发现页先看到更直观的设备实拍效果。
+                - generic [ref=e94]:
+                  - generic [ref=e95]: "#智能分拣"
+                  - generic [ref=e96]: "#产线实拍"
+                  - generic [ref=e97]: "#自动分流"
+                - generic [ref=e98]:
+                  - generic [ref=e99]: 民崛智能
+                  - generic [ref=e101]:
+                    - img [ref=e102]
+                    - text: 486,000
+            - generic [ref=e105] [cursor=pointer]:
+              - generic [ref=e106]:
+                - img "Halcon机器视觉完整教程 | 从入门到精通(1/50)" [ref=e107]
+                - generic:
+                  - generic:
+                    - img
+              - generic [ref=e108]:
+                - generic [ref=e109]:
+                  - generic [ref=e110]: 视频
+                  - generic [ref=e111]: 选型指南
+                  - generic [ref=e112]: 1个月前
+                - heading "Halcon机器视觉完整教程 | 从入门到精通(1/50)" [level=3] [ref=e113]
+                - paragraph [ref=e114]: 视觉教程大师围绕Halcon、教程和选型指南做了完整分享，适合快速了解应用场景、方案亮点与采购判断点。
+                - generic [ref=e115]:
+                  - generic [ref=e116]: "#Halcon"
+                  - generic [ref=e117]: "#教程"
+                  - generic [ref=e118]: "#入门"
+                - generic [ref=e119]:
+                  - generic [ref=e120]: 视觉教程大师
+                  - generic [ref=e122]:
+                    - img [ref=e123]
+                    - text: 567,000
+            - generic [ref=e126] [cursor=pointer]:
+              - img "基于视觉的智能分拣机市场——全球预测2026-2032" [ref=e128]
+              - generic [ref=e129]:
+                - generic [ref=e130]:
+                  - generic [ref=e131]:
+                    - img [ref=e132]
+                    - text: 文章
+                  - generic [ref=e135]: 行业观察
+                  - generic [ref=e136]: 今日精选
+                - heading "基于视觉的智能分拣机市场——全球预测2026-2032" [level=3] [ref=e137]
+                - paragraph [ref=e138]: 基于视觉的智能分拣机市场从2025年的23.8亿美元增长到2026年的26.7亿美元。预计其复合年增长率将保持在13.20%,到2032年达到56.8亿美元。
+                - generic [ref=e139]:
+                  - generic [ref=e140]: "#智能分拣"
+                  - generic [ref=e141]: "#市场预测"
+                  - generic [ref=e142]: "#采购策略"
+                - generic [ref=e143]:
+                  - generic [ref=e144]: 民崛研究院
+                  - generic [ref=e146]:
+                    - img [ref=e147]
+                    - text: 528,000
+        - generic [ref=e150]:
+          - heading "设备分类" [level=2] [ref=e152]: 设备分类
+          - generic [ref=e154]:
+            - generic [ref=e156]:
+              - generic [ref=e158] [cursor=pointer]:
+                - generic [ref=e159]:
+                  - generic [ref=e160]: "01"
+                  - generic [ref=e161]: AI视觉检测设备
+                - img [ref=e162]
+              - generic [ref=e165] [cursor=pointer]:
+                - generic [ref=e166]:
+                  - generic [ref=e167]: "02"
+                  - generic [ref=e168]: 工业相机
+                - img [ref=e169]
+              - generic [ref=e172] [cursor=pointer]:
+                - generic [ref=e173]:
+                  - generic [ref=e174]: "03"
+                  - generic [ref=e175]: 镜头与光源
+                - img [ref=e176]
+              - generic [ref=e179] [cursor=pointer]:
+                - generic [ref=e180]:
+                  - generic [ref=e181]: "04"
+                  - generic [ref=e182]: 图像采集卡
+                - img [ref=e183]
+              - generic [ref=e186] [cursor=pointer]:
+                - generic [ref=e187]:
+                  - generic [ref=e188]: "05"
+                  - generic [ref=e189]: 视觉软件
+                - img [ref=e190]
+              - generic [ref=e193] [cursor=pointer]:
+                - generic [ref=e194]:
+                  - generic [ref=e195]: "06"
+                  - generic [ref=e196]: 机器人与自动化
+                - img [ref=e197]
+              - generic [ref=e200] [cursor=pointer]:
+                - generic [ref=e201]:
+                  - generic [ref=e202]: "07"
+                  - generic [ref=e203]: 测量仪器
+                - img [ref=e204]
+              - generic [ref=e207] [cursor=pointer]:
+                - generic [ref=e208]:
+                  - generic [ref=e209]: "08"
+                  - generic [ref=e210]: 工程机械
+                - img [ref=e211]
+              - generic [ref=e214] [cursor=pointer]:
+                - generic [ref=e215]:
+                  - generic [ref=e216]: "09"
+                  - generic [ref=e217]: 酒店用品
+                - img [ref=e218]
+              - generic [ref=e221] [cursor=pointer]:
+                - generic [ref=e222]:
+                  - generic [ref=e223]: "10"
+                  - generic [ref=e224]: 水工业
+                - img [ref=e225]
+              - generic [ref=e228] [cursor=pointer]:
+                - generic [ref=e229]:
+                  - generic [ref=e230]: "11"
+                  - generic [ref=e231]: 电子元器件
+                - img [ref=e232]
+              - generic [ref=e235] [cursor=pointer]:
+                - generic [ref=e236]:
+                  - generic [ref=e237]: "12"
+                  - generic [ref=e238]: 包装设备
+                - img [ref=e239]
+            - generic [ref=e242]:
+              - generic [ref=e243]:
+                - heading "AI视觉检测设备" [level=3] [ref=e244]
+                - paragraph [ref=e245]: 共 5 个子分类 · 优质供应商认证 · 全方位技术支持
+              - generic [ref=e246]:
+                - generic [ref=e247]:
+                  - generic [ref=e248]:
+                    - heading "2D视觉检测系统" [level=4] [ref=e250]
+                    - generic [ref=e251]: 5 项产品
+                  - generic [ref=e252]:
+                    - generic [ref=e253] [cursor=pointer]: 平面缺陷检测
+                    - generic [ref=e254]: "|"
+                    - generic [ref=e255] [cursor=pointer]: 尺寸测量系统
+                    - generic [ref=e256]: "|"
+                    - generic [ref=e257] [cursor=pointer]: 字符识别OCR
+                    - generic [ref=e258]: "|"
+                    - generic [ref=e259] [cursor=pointer]: 条码扫描系统
+                    - generic [ref=e260]: "|"
+                    - generic [ref=e261] [cursor=pointer]: 表面质量检测
+                - generic [ref=e262]:
+                  - generic [ref=e263]:
+                    - heading "3D视觉检测系统" [level=4] [ref=e265]
+                    - generic [ref=e266]: 5 项产品
+                  - generic [ref=e267]:
+                    - generic [ref=e268] [cursor=pointer]: 激光三角测量
+                    - generic [ref=e269]: "|"
+                    - generic [ref=e270] [cursor=pointer]: 结构光扫描
+                    - generic [ref=e271]: "|"
+                    - generic [ref=e272] [cursor=pointer]: 飞行时间ToF
+                    - generic [ref=e273]: "|"
+                    - generic [ref=e274] [cursor=pointer]: 双目立体视觉
+                    - generic [ref=e275]: "|"
+                    - generic [ref=e276] [cursor=pointer]: 线激光轮廓测量
+                - generic [ref=e277]:
+                  - generic [ref=e278]:
+                    - heading "智能分拣系统" [level=4] [ref=e280]
+                    - generic [ref=e281]: 5 项产品
+                  - generic [ref=e282]:
+                    - generic [ref=e283] [cursor=pointer]: 视觉引导分拣
+                    - generic [ref=e284]: "|"
+                    - generic [ref=e285] [cursor=pointer]: Delta并联机器人
+                    - generic [ref=e286]: "|"
+                    - generic [ref=e287] [cursor=pointer]: 颜色识别分拣
+                    - generic [ref=e288]: "|"
+                    - generic [ref=e289] [cursor=pointer]: 形状识别分拣
+                    - generic [ref=e290]: "|"
+                    - generic [ref=e291] [cursor=pointer]: 混合物料分拣
+                - generic [ref=e292]:
+                  - generic [ref=e293]:
+                    - heading "AI深度学习检测" [level=4] [ref=e295]
+                    - generic [ref=e296]: 5 项产品
+                  - generic [ref=e297]:
+                    - generic [ref=e298] [cursor=pointer]: 缺陷识别算法
+                    - generic [ref=e299]: "|"
+                    - generic [ref=e300] [cursor=pointer]: 目标检测系统
+                    - generic [ref=e301]: "|"
+                    - generic [ref=e302] [cursor=pointer]: 图像分类系统
+                    - generic [ref=e303]: "|"
+                    - generic [ref=e304] [cursor=pointer]: 语义分割
+                    - generic [ref=e305]: "|"
+                    - generic [ref=e306] [cursor=pointer]: 实例分割
+                - generic [ref=e307]:
+                  - generic [ref=e308]:
+                    - heading "在线检测系统" [level=4] [ref=e310]
+                    - generic [ref=e311]: 5 项产品
+                  - generic [ref=e312]:
+                    - generic [ref=e313] [cursor=pointer]: 高速检测系统
+                    - generic [ref=e314]: "|"
+                    - generic [ref=e315] [cursor=pointer]: 连续流水线检测
+                    - generic [ref=e316]: "|"
+                    - generic [ref=e317] [cursor=pointer]: 实时质量监控
+                    - generic [ref=e318]: "|"
+                    - generic [ref=e319] [cursor=pointer]: 数据追溯系统
+                    - generic [ref=e320]: "|"
+                    - generic [ref=e321] [cursor=pointer]: MES集成
+        - generic [ref=e323]:
+          - generic [ref=e324]:
+            - heading "优选商品" [level=2] [ref=e325]: 优选商品
+            - paragraph [ref=e327]: 以下价格仅供参考,实际价格请联系供应商议价
+          - button "查看更多" [ref=e328]:
+            - text: 查看更多
+            - img [ref=e329]
+        - generic [ref=e357]:
+          - heading "优质供应商" [level=2] [ref=e358]: 优质供应商
+          - button "更多供应商" [ref=e360]:
+            - text: 更多供应商
+            - img [ref=e361]
+        - generic [ref=e376]:
+          - generic [ref=e377]:
+            - heading "最新采购" [level=2] [ref=e378]: 最新采购
+            - button "查看全部" [ref=e380]:
+              - text: 查看全部
+              - img [ref=e381]
+          - generic [ref=e384]: 暂无采购信息
+      - button "打开AI助手" [ref=e385]:
+        - img [ref=e387]
+  - contentinfo [ref=e390]:
+    - generic [ref=e391]:
+      - generic [ref=e392]:
+        - generic [ref=e393]:
+          - heading "懂视帝" [level=3] [ref=e394]
+          - paragraph [ref=e395]: 专注于AI视觉检测设备领域的专业服务平台，为您提供最优质的设备租赁、买卖及技术咨询服务。
+        - generic [ref=e396]:
+          - heading "快速链接" [level=4] [ref=e397]
+          - list [ref=e398]:
+            - listitem [ref=e399]:
+              - link "关于我们" [ref=e400] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e401]:
+              - link "服务条款" [ref=e402] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e403]:
+              - link "隐私政策" [ref=e404] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e405]:
+              - link "帮助中心" [ref=e406] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e407]:
+          - heading "联系我们" [level=4] [ref=e408]
+          - list [ref=e409]:
+            - listitem [ref=e410]:
+              - img [ref=e411]
+              - generic [ref=e414]: 2478686497@qq.com
+            - listitem [ref=e415]:
+              - img [ref=e416]
+              - generic [ref=e419]: 2696432359@qq.com
+        - generic [ref=e420]:
+          - heading "关注我们" [level=4] [ref=e421]
+          - generic [ref=e422]:
+            - link [ref=e423] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e424]
+            - link [ref=e426] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e427]
+            - link [ref=e429] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e430]
+          - generic [ref=e434]:
+            - heading "意见反馈" [level=5] [ref=e435]
+            - button "提交反馈" [ref=e436]
+      - paragraph [ref=e438]: © 2025 懂视帝. All rights reserved.
